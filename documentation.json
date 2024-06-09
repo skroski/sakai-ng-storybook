@@ -10351,16 +10351,6 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "context",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/test.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-            },
-            {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -10379,163 +10369,10 @@
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\n  production: false\n}"
-            },
-            {
-                "name": "Large",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n  },\n}"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    user: {\n      name: 'Jane Doe',\n    },\n  },\n}"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    const loginButton = canvas.getByRole('button', { name: /Log in/i });\n    await expect(loginButton).toBeInTheDocument();\n    await userEvent.click(loginButton);\n    await expect(loginButton).not.toBeInTheDocument();\n\n    const logoutButton = canvas.getByRole('button', { name: /Log out/i });\n    await expect(logoutButton).toBeInTheDocument();\n  },\n}"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args\n  args: { onClick: fn() },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<HeaderComponent>",
-                "defaultValue": "{\n  title: 'Example/Header',\n  component: HeaderComponent,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs\n  tags: ['autodocs'],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n  args: {\n    onLogin: fn(),\n    onLogout: fn(),\n    onCreateAccount: fn(),\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<PageComponent>",
-                "defaultValue": "{\n  title: 'Example/Page',\n  component: PageComponent,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
-            },
-            {
-                "name": "require",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/test.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "literal type"
-            },
-            {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
-            },
-            {
-                "name": "Small",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
             }
         ],
         "functions": [],
-        "typealiases": [
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<ButtonComponent>",
-                "file": "src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<HeaderComponent>",
-                "file": "src/stories/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<PageComponent>",
-                "file": "src/stories/page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            }
-        ],
+        "typealiases": [],
         "enumerations": [
             {
                 "name": "BlockView",
@@ -10560,27 +10397,6 @@
             }
         ],
         "groupedVariables": {
-            "src/test.ts": [
-                {
-                    "name": "context",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/test.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-                },
-                {
-                    "name": "require",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/test.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "literal type"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -10603,122 +10419,6 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\n  production: false\n}"
-                }
-            ],
-            "src/stories/button.stories.ts": [
-                {
-                    "name": "Large",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n  },\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args\n  args: { onClick: fn() },\n}"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
-                },
-                {
-                    "name": "Small",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
-                }
-            ],
-            "src/stories/header.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    user: {\n      name: 'Jane Doe',\n    },\n  },\n}"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<HeaderComponent>",
-                    "defaultValue": "{\n  title: 'Example/Header',\n  component: HeaderComponent,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs\n  tags: ['autodocs'],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n  args: {\n    onLogin: fn(),\n    onLogout: fn(),\n    onCreateAccount: fn(),\n  },\n}"
-                }
-            ],
-            "src/stories/page.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    const loginButton = canvas.getByRole('button', { name: /Log in/i });\n    await expect(loginButton).toBeInTheDocument();\n    await userEvent.click(loginButton);\n    await expect(loginButton).not.toBeInTheDocument();\n\n    const logoutButton = canvas.getByRole('button', { name: /Log out/i });\n    await expect(logoutButton).toBeInTheDocument();\n  },\n}"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<PageComponent>",
-                    "defaultValue": "{\n  title: 'Example/Page',\n  component: PageComponent,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
                 }
             ]
         },
@@ -10748,47 +10448,7 @@
                 }
             ]
         },
-        "groupedTypeAliases": {
-            "src/stories/button.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ButtonComponent>",
-                    "file": "src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "src/stories/header.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<HeaderComponent>",
-                    "file": "src/stories/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "src/stories/page.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<PageComponent>",
-                    "file": "src/stories/page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ]
-        }
+        "groupedTypeAliases": {}
     },
     "routes": [],
     "coverage": {
@@ -11365,92 +11025,12 @@
                 "status": "very-good"
             },
             {
-                "filePath": "src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Large",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/stories/header.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -11463,62 +11043,12 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/stories/user.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "User",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "src/test.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "context",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/test.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "require",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
                 "status": "low"
             }
         ]
