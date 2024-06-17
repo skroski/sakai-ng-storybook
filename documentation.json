@@ -3382,7 +3382,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".storybook-button {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #333;\n  background-color: transparent;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n",
+                    "data": ".storybook-button {\n  font-family: \"Nunito Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #fff;\n  background-color: green;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n",
                     "styleUrl": "./button.css"
                 }
             ],
@@ -3402,7 +3402,7 @@
         },
         {
             "name": "ButtonDemoComponent",
-            "id": "component-ButtonDemoComponent-7f7d6343d7b3becb8af7f98d837901ff04222abfb830f4ea6237776cca78cfcd6273cc8c69850887b9ca7a9b840bcc31c40a89c83a1585fd048059018ba911a5",
+            "id": "component-ButtonDemoComponent-af84b8776218be13438eba75af82024e973c82e3c1a5667be59a397ad3924905642f396f5c21ec665e52c3a1b6af8d7c130734e1b195c5cb791714ce64baeb22",
             "file": "src/app/demo/components/uikit/button/buttondemo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3410,14 +3410,61 @@
             "outputs": [],
             "providers": [],
             "styleUrls": [],
-            "styles": [],
+            "styles": [
+                "\n    .storybook-button {\n  font-family: \"Nunito Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #fff;\n  background-color: green;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n\n    "
+            ],
             "templateUrl": [
                 "./buttondemo.component.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 46,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "\"Button\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 52,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 43,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "\"medium\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 49,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 55,
+                    "type": "EventEmitter"
+                }
+            ],
             "propertiesClass": [
                 {
                     "name": "items",
@@ -3427,7 +3474,7 @@
                     "type": "MenuItem[]",
                     "optional": false,
                     "description": "",
-                    "line": 9
+                    "line": 65
                 },
                 {
                     "name": "loading",
@@ -3437,7 +3484,7 @@
                     "type": "[]",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 67
                 }
             ],
             "methodsClass": [
@@ -3454,7 +3501,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 23,
+                    "line": 79,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3475,7 +3522,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 13,
+                    "line": 69,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -3489,14 +3536,25 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { MenuItem } from 'primeng/api';\n\n@Component({\n    templateUrl: './buttondemo.component.html'\n})\nexport class ButtonDemoComponent implements OnInit {\n\n    items: MenuItem[] = [];\n\n    loading = [false, false, false, false];\n\n    ngOnInit() {\n        this.items = [\n            { label: 'Update', icon: 'pi pi-refresh' },\n            { label: 'Delete', icon: 'pi pi-times' },\n            { label: 'Angular.io', icon: 'pi pi-info', url: 'http://angular.io' },\n            { separator: true },\n            { label: 'Setup', icon: 'pi pi-cog' }\n        ];\n    }\n\n    load(index: number) {\n        this.loading[index] = true;\n        setTimeout(() => this.loading[index] = false, 1000);\n    }\n    \n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from \"@angular/core\";\nimport { MenuItem } from \"primeng/api\";\n\n@Component({\n    templateUrl: \"./buttondemo.component.html\",\n    styles: `\n    .storybook-button {\n  font-family: \"Nunito Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #fff;\n  background-color: green;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n\n    `,\n})\nexport class ButtonDemoComponent implements OnInit {\n\n    @Input()\n    primary = false;\n\n    @Input()\n    backgroundColor?: string;\n\n    @Input()\n    size: \"small\" | \"medium\" | \"large\" = \"medium\";\n\n    @Input()\n    label = \"Button\";\n\n    @Output()\n    onClick = new EventEmitter<Event>();\n\n    public get classes(): string[] {\n        const mode = this.primary\n            ? \"storybook-button--primary\"\n            : \"storybook-button--secondary\";\n\n        return [\"storybook-button\", `storybook-button--${this.size}`, mode];\n    }\n\n    items: MenuItem[] = [];\n\n    loading = [false, false, false, false];\n\n    ngOnInit() {\n        this.items = [\n            { label: \"Update\", icon: \"pi pi-refresh\" },\n            { label: \"Delete\", icon: \"pi pi-times\" },\n            { label: \"Angular.io\", icon: \"pi pi-info\", url: \"http://angular.io\" },\n            { separator: true },\n            { label: \"Setup\", icon: \"pi pi-cog\" },\n        ];\n    }\n\n    load(index: number) {\n        this.loading[index] = true;\n        setTimeout(() => (this.loading[index] = false), 1000);\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
-            "stylesData": "",
+            "stylesData": "\n    .storybook-button {\n  font-family: \"Nunito Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #fff;\n  background-color: green;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n\n    \n",
             "extends": [],
             "implements": [
                 "OnInit"
             ],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 57
+                    }
+                }
+            },
             "templateData": "<div class=\"grid\">\n\t<div class=\"col-12 md:col-6\">\n\t\t<div class=\"card\">\n\t\t\t<h5>Default</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<button pButton pRipple label=\"Submit\"></button>\n\t\t\t\t<button pButton pRipple label=\"Disabled\" disabled=\"true\"></button>\n\t\t\t\t<p-button label=\"Link\" styleClass=\"p-button-link\"></p-button>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>Severities</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Primary\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Secondary\" class=\"p-button-secondary\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Success\" class=\"p-button-success\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Info\" class=\"p-button-info\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Warning\" class=\"p-button-warning\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Help\" class=\"p-button-help\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Danger\" class=\"p-button-danger\"></button>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>Text</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Primary\" class=\"p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Secondary\" class=\"p-button-secondary p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Success\" class=\"p-button-success p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Info\" class=\"p-button-info p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Warning\" class=\"p-button-warning p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Help\" class=\"p-button-help p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Danger\" class=\"p-button-danger p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Plain\" class=\"p-button-text p-button-plain\"></button>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>Outlined</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Primary\" class=\"p-button-outlined\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Secondary\" class=\"p-button-outlined p-button-secondary\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Success\" class=\"p-button-outlined p-button-success\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Info\" class=\"p-button-outlined p-button-info\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Warning\" class=\"p-button-outlined p-button-warning\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Help\" class=\"p-button-outlined p-button-help\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Danger\" class=\"p-button-outlined p-button-danger\"></button>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>Button Set</h5>\n\t\t\t<span class=\"p-buttonset\">\n\t\t\t\t<button pButton pRipple label=\"Save\" icon=\"pi pi-check\"></button>\n\t\t\t\t<button pButton pRipple label=\"Delete\" icon=\"pi pi-trash\"></button>\n\t\t\t</span>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>SplitButton</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<p-splitButton label=\"Save\" icon=\"pi pi-plus\" [model]=\"items\" styleClass=\"p-button-info\"></p-splitButton>\n\t\t\t\t<p-splitButton label=\"Save\" icon=\"pi pi-plus\" [model]=\"items\" styleClass=\"p-button-success\"></p-splitButton>\n\t\t\t\t<p-splitButton label=\"Save\" icon=\"pi pi-plus\" [model]=\"items\" styleClass=\"p-button-warning\"></p-splitButton>\n\t\t\t\t<p-splitButton label=\"Save\" icon=\"pi pi-plus\" [model]=\"items\" styleClass=\"p-button-help\"></p-splitButton>\n\t\t\t\t<p-splitButton label=\"Save\" icon=\"pi pi-plus\" [model]=\"items\" styleClass=\"p-button-danger\"></p-splitButton>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"card\">\n\t\t\t<h5>Templating</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<p-button>\n\t\t\t\t\t<img alt=\"logo\" src=\"https://primefaces.org/cdn/primeng/images/primeng-icon.svg\" style=\"width: 1.5rem\"/>\n\t\t\t\t</p-button>\n\t\n\t\t\t\t<p-button styleClass=\"p-button-outlined\">\n\t\t\t\t\t<img alt=\"logo\" src=\"https://primefaces.org/cdn/primeng/images/primeng-icon.svg\" style=\"width: 1.5rem\"/>\n\t\t\t\t\t<span class=\"ml-2 font-bold\">PrimeNG</span>\n\t\t\t\t</p-button>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"col-12 md:col-6\">\n\t\t<div class=\"card\">\n\t\t\t<h5>Icons</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<button pButton pRipple icon=\"pi pi-star-fill\"></button>\n\t\t\t\t<button pButton pRipple label=\"Submit\" icon=\"pi pi-bookmark\"></button>\n\t\t\t\t<button pButton pRipple label=\"Submit\" icon=\"pi pi-bookmark\" iconPos=\"right\"></button>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>Raised</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Primary\" class=\"p-button-raised\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Secondary\" class=\"p-button-raised p-button-secondary\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Success\" class=\"p-button-raised p-button-success\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Info\" class=\"p-button-raised p-button-info\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Warning\" class=\"p-button-raised p-button-warning\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Help\" class=\"p-button-raised p-button-help\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Danger\" class=\"p-button-raised p-button-danger\"></button>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>Rounded</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Primary\" class=\"p-button-rounded\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Secondary\" class=\"p-button-rounded p-button-secondary\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Success\" class=\"p-button-rounded p-button-success\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Info\" class=\"p-button-rounded p-button-info\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Warning\" class=\"p-button-rounded p-button-warning\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Help\" class=\"p-button-rounded p-button-help\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Danger\" class=\"p-button-rounded p-button-danger\"></button>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>Rounded Icons</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-check\" class=\"p-button-rounded\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-bookmark\" class=\"p-button-rounded p-button-secondary\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-search\" class=\"p-button-rounded p-button-success\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-user\" class=\"p-button-rounded p-button-info\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-bell\" class=\"p-button-rounded p-button-warning\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-heart\" class=\"p-button-rounded p-button-help\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-times\" class=\"p-button-rounded p-button-danger\"></button>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>Rounded Text</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-check\" class=\"p-button-rounded p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-bookmark\" class=\"p-button-rounded p-button-secondary p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-search\" class=\"p-button-rounded p-button-success p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-user\" class=\"p-button-rounded p-button-info p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-bell\" class=\"p-button-rounded p-button-warning p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-heart\" class=\"p-button-rounded p-button-help p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-times\" class=\"p-button-rounded p-button-danger p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-filter\" class=\"p-button-rounded p-button-text p-button-plain\"></button>\n\t\t\t</div>\n\t\t</div>\n\t\t\n\t\t<div class=\"card\">\n\t\t\t<h5>Rounded Outlined</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-check\" class=\"p-button-rounded p-button-outlined\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-bookmark\" class=\"p-button-rounded p-button-secondary p-button-outlined\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-search\" class=\"p-button-rounded p-button-success p-button-outlined\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-user\" class=\"p-button-rounded p-button-info p-button-outlined\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-bell\" class=\"p-button-rounded p-button-warning p-button-outlined\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-heart\" class=\"p-button-rounded p-button-help p-button-outlined\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-times\" class=\"p-button-rounded p-button-danger p-button-outlined\"></button>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>Loading</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<p-button label=\"Search\" icon=\"pi pi-search\" [loading]=\"loading[0]\" (onClick)=\"load(0)\"></p-button>\n\t\t\t\t<p-button label=\"Search\" icon=\"pi pi-search\" iconPos=\"right\" [loading]=\"loading[1]\" (onClick)=\"load(1)\"></p-button>\n\t\t\t\t<p-button icon=\"pi pi-search\" [loading]=\"loading[2]\" (onClick)=\"load(2)\"></p-button>\n\t\t\t\t<p-button label=\"Search\" [loading]=\"loading[3]\" (onClick)=\"load(3)\"></p-button>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>"
         },
         {
@@ -7630,7 +7688,7 @@
         },
         {
             "name": "TreeDemoComponent",
-            "id": "component-TreeDemoComponent-ddf82aa427c9f4d518e1b5fb385472c52288fae6dc3fee775f4b053f2847c78ae07515af979181ca78738471a20c67676085b20678ed3fcb9632471676fda587",
+            "id": "component-TreeDemoComponent-440c17c22613c19a67a9e28f54d418f7ef1add188a17d90d01e4aa3d5893a087d247cf0327f8fbc106792e31e661b2ed671dd13b3282267931d354ee012141c7",
             "file": "src/app/demo/components/uikit/tree/treedemo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -7644,51 +7702,80 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [
+            "inputsClass": [
+                {
+                    "name": "collapsedIcon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "string",
+                    "decorators": []
+                },
                 {
                     "name": "cols",
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
+                    "line": 29,
                     "type": "any[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 22
+                    "decorators": []
+                },
+                {
+                    "name": "expandedIcon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "fileIcon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "string",
+                    "decorators": []
                 },
                 {
                     "name": "files1",
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
+                    "line": 14,
                     "type": "TreeNode[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 10
+                    "decorators": []
                 },
+                {
+                    "name": "selectionMode",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 8,
+                    "type": "TreeNode[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
                 {
                     "name": "files2",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "TreeNode[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 12
-                },
-                {
-                    "name": "files3",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "TreeNode[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 14
-                },
-                {
-                    "name": "selectedFiles1",
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -7698,7 +7785,7 @@
                     "line": 16
                 },
                 {
-                    "name": "selectedFiles2",
+                    "name": "files3",
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -7708,6 +7795,26 @@
                     "line": 18
                 },
                 {
+                    "name": "selectedFiles1",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TreeNode[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "selectedFiles2",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TreeNode[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 22
+                },
+                {
                     "name": "selectedFiles3",
                     "defaultValue": "{}",
                     "deprecated": false,
@@ -7715,7 +7822,7 @@
                     "type": "TreeNode",
                     "optional": false,
                     "description": "",
-                    "line": 20
+                    "line": 24
                 }
             ],
             "methodsClass": [
@@ -7725,7 +7832,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26,
+                    "line": 33,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -7739,7 +7846,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { NodeService } from 'src/app/demo/service/node.service';\nimport { TreeNode} from 'primeng/api';\n\n@Component({\n    templateUrl: './treedemo.component.html'\n})\nexport class TreeDemoComponent implements OnInit {\n\n    files1: TreeNode[] = [];\n\n    files2: TreeNode[] = [];\n\n    files3: TreeNode[] = [];\n\n    selectedFiles1: TreeNode[] = [];\n\n    selectedFiles2: TreeNode[] = [];\n\n    selectedFiles3: TreeNode = {};\n\n    cols: any[] = [];\n\n    constructor(private nodeService: NodeService) {}\n\n    ngOnInit() {\n        this.nodeService.getFiles().then(files => this.files1 = files);\n        this.nodeService.getFilesystem().then(files => this.files2 = files);\n        this.nodeService.getFiles().then(files => {\n            this.files3 = [{\n                label: 'Root',\n                children: files\n            }];\n        });\n\n        this.cols = [\n            { field: 'name', header: 'Name' },\n            { field: 'size', header: 'Size' },\n            { field: 'type', header: 'Type' }\n        ];\n    }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { NodeService } from 'src/app/demo/service/node.service';\nimport { TreeNode } from 'primeng/api';\n@Component({\n    templateUrl: './treedemo.component.html'\n})\nexport class TreeDemoComponent implements OnInit {\n    @Input() value: TreeNode[] = [];\n    @Input() selectionMode: string;\n\n    @Output()\n    onClick = new EventEmitter<Event>();\n\n    @Input() files1: TreeNode[] = [];\n\n    files2: TreeNode[] = [];\n\n    files3: TreeNode[] = [];\n\n    selectedFiles1: TreeNode[] = [];\n\n    selectedFiles2: TreeNode[] = [];\n\n    selectedFiles3: TreeNode = {};\n    @Input() collapsedIcon: string;\n    @Input() expandedIcon: string;\n    @Input() fileIcon: string;\n\n    @Input() cols: any[] = [];\n\n    constructor(private nodeService: NodeService) { }\n\n    ngOnInit() {\n\n        this.nodeService.getFiles().then(files => this.value = files);\n        this.nodeService.getFilesystem().then(files => this.files2 = files);\n        this.nodeService.getFiles().then(files => {\n            this.files3 = [{\n                label: 'Root',\n                children: files\n            }];\n        });\n\n        this.cols = [\n            { field: 'name', header: 'Name' },\n            { field: 'size', header: 'Size' },\n            { field: 'type', header: 'Type' }\n        ];\n        console.log(this.value);\n\n    }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -7756,7 +7863,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 22,
+                "line": 29,
                 "jsdoctags": [
                     {
                         "name": "nodeService",
@@ -7773,7 +7880,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"grid\">\n\t<div class=\"col-12\">\n\t\t<div class=\"card\">\n\t\t\t<h5>Tree</h5>\n\t\t\t<p-tree [value]=\"files1\" selectionMode=\"checkbox\" [(selection)]=\"selectedFiles1\"></p-tree>\n\t\t</div>\n\t</div>\n\t<div class=\"col-12\">\n\t\t<div class=\"card\">\n\t\t\t<h5>TreeTable</h5>\n\t\t\t<p-treeTable [value]=\"files2\" [columns]=\"cols\" selectionMode=\"checkbox\" [(selection)]=\"selectedFiles2\">\n\t\t\t\t<ng-template pTemplate=\"header\" let-columns>\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<th *ngFor=\"let col of columns\">\n\t\t\t\t\t\t\t{{col.header}}\n\t\t\t\t\t\t</th>\n\t\t\t\t\t</tr>\n\t\t\t\t</ng-template>\n\t\t\t\t<ng-template pTemplate=\"body\" let-rowNode let-rowData=\"rowData\" let-columns=\"columns\">\n\t\t\t\t\t<tr>\n\t\t\t\t\t\t<td *ngFor=\"let col of columns; let i = index\">\n\t\t\t\t\t\t\t<p-treeTableToggler [rowNode]=\"rowNode\" *ngIf=\"i === 0\"></p-treeTableToggler>\n\t\t\t\t\t\t\t<p-treeTableCheckbox [value]=\"rowNode\" *ngIf=\"i === 0\"></p-treeTableCheckbox>\n\t\t\t\t\t\t\t{{rowData[col.field]}}\n\t\t\t\t\t\t</td>\n\t\t\t\t\t</tr>\n\t\t\t\t</ng-template>\n\t\t\t</p-treeTable>\n\t\t</div>\n\t</div>\n\t<div class=\"col-12\">\n\t\t<div class=\"card\">\n\t\t\t<h5>Horizontal Tree</h5>\n\t\t\t<p-tree [value]=\"files3\" layout=\"horizontal\" selectionMode=\"single\" [(selection)]=\"selectedFiles3\"></p-tree>\n\t\t</div>\n\t</div>\n</div>\n"
+            "templateData": "<div class=\"grid\">\n  <div class=\"col-12\">\n    <div class=\"card\">\n      <h5>Tree</h5>\n      <p-tree\n        [value]=\"value\"\n        selectionMode=\"single\"\n        expandedIcon=\"pi pi-folder\"\n        [(selection)]=\"selectedFiles1\"\n      ></p-tree>\n    </div>\n  </div>\n  <div class=\"col-12\">\n    <div class=\"card\">\n      <h5>TreeTable</h5>\n      <p-treeTable\n        [value]=\"files2\"\n        [columns]=\"cols\"\n        selectionMode=\"checkbox\"\n        [(selection)]=\"selectedFiles2\"\n      >\n        <ng-template pTemplate=\"header\" let-columns>\n          <tr>\n            <th *ngFor=\"let col of columns\">\n              {{ col.header }}\n            </th>\n          </tr>\n        </ng-template>\n        <ng-template\n          pTemplate=\"body\"\n          let-rowNode\n          let-rowData=\"rowData\"\n          let-columns=\"columns\"\n        >\n          <tr>\n            <td *ngFor=\"let col of columns; let i = index\">\n              <p-treeTableToggler\n                [rowNode]=\"rowNode\"\n                *ngIf=\"i === 0\"\n              ></p-treeTableToggler>\n              <p-treeTableCheckbox\n                [value]=\"rowNode\"\n                *ngIf=\"i === 0\"\n              ></p-treeTableCheckbox>\n              {{ rowData[col.field] }}\n            </td>\n          </tr>\n        </ng-template>\n      </p-treeTable>\n    </div>\n  </div>\n  <div class=\"col-12\">\n    <div class=\"card\">\n      <h5>Horizontal Tree</h5>\n      <p-tree\n        [value]=\"files3\"\n        layout=\"horizontal\"\n        selectionMode=\"single\"\n        [(selection)]=\"selectedFiles3\"\n      ></p-tree>\n    </div>\n  </div>\n</div>\n"
         }
     ],
     "modules": [
@@ -10371,7 +10478,19 @@
                 "defaultValue": "{\n  production: false\n}"
             }
         ],
-        "functions": [],
+        "functions": [
+            {
+                "name": "injectInjectorToProps",
+                "file": "src/app/demo/inject-injector-to-props.decorator.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [],
+                "returnType": "DecoratorFunction<AngularRenderer, TArgs>"
+            }
+        ],
         "typealiases": [],
         "enumerations": [
             {
@@ -10422,7 +10541,21 @@
                 }
             ]
         },
-        "groupedFunctions": {},
+        "groupedFunctions": {
+            "src/app/demo/inject-injector-to-props.decorator.ts": [
+                {
+                    "name": "injectInjectorToProps",
+                    "file": "src/app/demo/inject-injector-to-props.decorator.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [],
+                    "returnType": "DecoratorFunction<AngularRenderer, TArgs>"
+                }
+            ]
+        },
         "groupedEnumerations": {
             "src/app/demo/components/primeblocks/blockviewer/blockviewer.component.ts": [
                 {
@@ -10632,7 +10765,7 @@
                 "linktype": "component",
                 "name": "ButtonDemoComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {
@@ -10812,7 +10945,7 @@
                 "linktype": "component",
                 "name": "TreeDemoComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/10",
+                "coverageCount": "0/16",
                 "status": "low"
             },
             {
@@ -10822,6 +10955,16 @@
                 "name": "IconsComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/demo/inject-injector-to-props.decorator.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "injectInjectorToProps",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

@@ -1,13 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NodeService } from 'src/app/demo/service/node.service';
-import { TreeNode} from 'primeng/api';
-
+import { TreeNode } from 'primeng/api';
 @Component({
+    selector: 'app-treedemo',
     templateUrl: './treedemo.component.html'
 })
 export class TreeDemoComponent implements OnInit {
+    @Input() value: TreeNode[] = [];
+    @Input() selectionMode: string;
 
-    files1: TreeNode[] = [];
+    @Output()
+    onClick = new EventEmitter<Event>();
+
+    @Input() files1: TreeNode[] = [];
 
     files2: TreeNode[] = [];
 
@@ -18,13 +23,17 @@ export class TreeDemoComponent implements OnInit {
     selectedFiles2: TreeNode[] = [];
 
     selectedFiles3: TreeNode = {};
+    @Input() collapsedIcon: string;
+    @Input() expandedIcon: string;
+    @Input() fileIcon: string;
 
-    cols: any[] = [];
+    @Input() cols: any[] = [];
 
-    constructor(private nodeService: NodeService) {}
+    constructor(private nodeService: NodeService) { }
 
     ngOnInit() {
-        this.nodeService.getFiles().then(files => this.files1 = files);
+
+        this.nodeService.getFiles().then(files => this.value = files);
         this.nodeService.getFilesystem().then(files => this.files2 = files);
         this.nodeService.getFiles().then(files => {
             this.files3 = [{
@@ -38,5 +47,8 @@ export class TreeDemoComponent implements OnInit {
             { field: 'size', header: 'Size' },
             { field: 'type', header: 'Type' }
         ];
+        console.log(this.value);
+
     }
+
 }

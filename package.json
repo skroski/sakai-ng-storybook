@@ -10,6 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "storybook": "ng run sakai-ng-storybook:storybook",
+    "deploy-storybook": "storybook-to-ghpages",
     "build-storybook": "ng run sakai-ng-storybook:build-storybook"
   },
   "private": true,
@@ -50,6 +51,7 @@
     "@storybook/addon-links": "^8.1.6",
     "@storybook/angular": "^8.1.6",
     "@storybook/blocks": "^8.1.6",
+    "@storybook/storybook-deployer": "^2.8.16",
     "@storybook/test": "^8.1.6",
     "@types/jasmine": "~4.3.1",
     "jasmine-core": "~4.6.0",
