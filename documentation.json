@@ -3402,20 +3402,18 @@
         },
         {
             "name": "ButtonDemoComponent",
-            "id": "component-ButtonDemoComponent-af84b8776218be13438eba75af82024e973c82e3c1a5667be59a397ad3924905642f396f5c21ec665e52c3a1b6af8d7c130734e1b195c5cb791714ce64baeb22",
+            "id": "component-ButtonDemoComponent-6b62ae9d6314d1adbac38f69e3d16f704fa7a987985a1213b6c6868dd66cc095ee52145c7e3cd3df904ea247e443a6d1db813139b7e45483c05173a0fc869d71",
             "file": "src/app/demo/components/uikit/button/buttondemo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
+            "selector": "app-buttondemo",
             "styleUrls": [],
-            "styles": [
-                "\n    .storybook-button {\n  font-family: \"Nunito Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #fff;\n  background-color: green;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n\n    "
-            ],
-            "templateUrl": [
-                "./buttondemo.component.html"
-            ],
+            "styles": [],
+            "template": "<button    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>",
+            "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
@@ -3423,16 +3421,15 @@
                     "name": "backgroundColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 46,
+                    "line": 23,
                     "type": "string",
                     "decorators": []
                 },
                 {
                     "name": "label",
-                    "defaultValue": "\"Button\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 52,
+                    "line": 29,
                     "type": "string",
                     "decorators": []
                 },
@@ -3441,7 +3438,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 43,
+                    "line": 20,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -3450,7 +3447,7 @@
                     "defaultValue": "\"medium\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 49,
+                    "line": 26,
                     "type": "\"small\" | \"medium\" | \"large\"",
                     "decorators": []
                 }
@@ -3461,7 +3458,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 55,
+                    "line": 32,
                     "type": "EventEmitter"
                 }
             ],
@@ -3474,7 +3471,7 @@
                     "type": "MenuItem[]",
                     "optional": false,
                     "description": "",
-                    "line": 65
+                    "line": 42
                 },
                 {
                     "name": "loading",
@@ -3484,7 +3481,7 @@
                     "type": "[]",
                     "optional": false,
                     "description": "",
-                    "line": 67
+                    "line": 44
                 }
             ],
             "methodsClass": [
@@ -3501,7 +3498,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 79,
+                    "line": 56,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3522,7 +3519,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 69,
+                    "line": 46,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -3536,10 +3533,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from \"@angular/core\";\nimport { MenuItem } from \"primeng/api\";\n\n@Component({\n    templateUrl: \"./buttondemo.component.html\",\n    styles: `\n    .storybook-button {\n  font-family: \"Nunito Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #fff;\n  background-color: green;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n\n    `,\n})\nexport class ButtonDemoComponent implements OnInit {\n\n    @Input()\n    primary = false;\n\n    @Input()\n    backgroundColor?: string;\n\n    @Input()\n    size: \"small\" | \"medium\" | \"large\" = \"medium\";\n\n    @Input()\n    label = \"Button\";\n\n    @Output()\n    onClick = new EventEmitter<Event>();\n\n    public get classes(): string[] {\n        const mode = this.primary\n            ? \"storybook-button--primary\"\n            : \"storybook-button--secondary\";\n\n        return [\"storybook-button\", `storybook-button--${this.size}`, mode];\n    }\n\n    items: MenuItem[] = [];\n\n    loading = [false, false, false, false];\n\n    ngOnInit() {\n        this.items = [\n            { label: \"Update\", icon: \"pi pi-refresh\" },\n            { label: \"Delete\", icon: \"pi pi-times\" },\n            { label: \"Angular.io\", icon: \"pi pi-info\", url: \"http://angular.io\" },\n            { separator: true },\n            { label: \"Setup\", icon: \"pi pi-cog\" },\n        ];\n    }\n\n    load(index: number) {\n        this.loading[index] = true;\n        setTimeout(() => (this.loading[index] = false), 1000);\n    }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from \"@angular/core\";\nimport { MenuItem } from \"primeng/api\";\n\n@Component({\n    //templateUrl: './buttondemo.component.html',\n    selector: 'app-buttondemo',\n    template: `<button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n    styleUrl: './buttondemo.component.scss',\n})\nexport class ButtonDemoComponent implements OnInit {\n\n    @Input()\n    primary = false;\n\n    @Input()\n    backgroundColor?: string;\n\n    @Input()\n    size: \"small\" | \"medium\" | \"large\" = \"medium\";\n\n    @Input()\n    label?: string;\n\n    @Output()\n    onClick = new EventEmitter<Event>();\n\n    public get classes(): string[] {\n        const mode = this.primary\n            ? \"p-button-primary\"\n            : \"p-button-secondary\";\n\n        return [\"p-element p-ripple p-component p-button \", `p-button-${this.size}`, mode];\n    }\n\n    items: MenuItem[] = [];\n\n    loading = [false, false, false, false];\n\n    ngOnInit() {\n        this.items = [\n            { label: \"Update\", icon: \"pi pi-refresh\" },\n            { label: \"Delete\", icon: \"pi pi-times\" },\n            { label: \"Angular.io\", icon: \"pi pi-info\", url: \"http://angular.io\" },\n            { separator: true },\n            { label: \"Setup\", icon: \"pi pi-cog\" },\n        ];\n    }\n\n    load(index: number) {\n        this.loading[index] = true;\n        setTimeout(() => (this.loading[index] = false), 1000);\n    }\n}\n",
+            "styleUrl": "./buttondemo.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
-            "stylesData": "\n    .storybook-button {\n  font-family: \"Nunito Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #fff;\n  background-color: green;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n\n    \n",
+            "stylesData": "",
             "extends": [],
             "implements": [
                 "OnInit"
@@ -3551,11 +3549,10 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 57
+                        "line": 34
                     }
                 }
-            },
-            "templateData": "<div class=\"grid\">\n\t<div class=\"col-12 md:col-6\">\n\t\t<div class=\"card\">\n\t\t\t<h5>Default</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<button pButton pRipple label=\"Submit\"></button>\n\t\t\t\t<button pButton pRipple label=\"Disabled\" disabled=\"true\"></button>\n\t\t\t\t<p-button label=\"Link\" styleClass=\"p-button-link\"></p-button>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>Severities</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Primary\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Secondary\" class=\"p-button-secondary\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Success\" class=\"p-button-success\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Info\" class=\"p-button-info\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Warning\" class=\"p-button-warning\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Help\" class=\"p-button-help\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Danger\" class=\"p-button-danger\"></button>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>Text</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Primary\" class=\"p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Secondary\" class=\"p-button-secondary p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Success\" class=\"p-button-success p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Info\" class=\"p-button-info p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Warning\" class=\"p-button-warning p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Help\" class=\"p-button-help p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Danger\" class=\"p-button-danger p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Plain\" class=\"p-button-text p-button-plain\"></button>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>Outlined</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Primary\" class=\"p-button-outlined\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Secondary\" class=\"p-button-outlined p-button-secondary\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Success\" class=\"p-button-outlined p-button-success\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Info\" class=\"p-button-outlined p-button-info\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Warning\" class=\"p-button-outlined p-button-warning\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Help\" class=\"p-button-outlined p-button-help\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Danger\" class=\"p-button-outlined p-button-danger\"></button>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>Button Set</h5>\n\t\t\t<span class=\"p-buttonset\">\n\t\t\t\t<button pButton pRipple label=\"Save\" icon=\"pi pi-check\"></button>\n\t\t\t\t<button pButton pRipple label=\"Delete\" icon=\"pi pi-trash\"></button>\n\t\t\t</span>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>SplitButton</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<p-splitButton label=\"Save\" icon=\"pi pi-plus\" [model]=\"items\" styleClass=\"p-button-info\"></p-splitButton>\n\t\t\t\t<p-splitButton label=\"Save\" icon=\"pi pi-plus\" [model]=\"items\" styleClass=\"p-button-success\"></p-splitButton>\n\t\t\t\t<p-splitButton label=\"Save\" icon=\"pi pi-plus\" [model]=\"items\" styleClass=\"p-button-warning\"></p-splitButton>\n\t\t\t\t<p-splitButton label=\"Save\" icon=\"pi pi-plus\" [model]=\"items\" styleClass=\"p-button-help\"></p-splitButton>\n\t\t\t\t<p-splitButton label=\"Save\" icon=\"pi pi-plus\" [model]=\"items\" styleClass=\"p-button-danger\"></p-splitButton>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"card\">\n\t\t\t<h5>Templating</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<p-button>\n\t\t\t\t\t<img alt=\"logo\" src=\"https://primefaces.org/cdn/primeng/images/primeng-icon.svg\" style=\"width: 1.5rem\"/>\n\t\t\t\t</p-button>\n\t\n\t\t\t\t<p-button styleClass=\"p-button-outlined\">\n\t\t\t\t\t<img alt=\"logo\" src=\"https://primefaces.org/cdn/primeng/images/primeng-icon.svg\" style=\"width: 1.5rem\"/>\n\t\t\t\t\t<span class=\"ml-2 font-bold\">PrimeNG</span>\n\t\t\t\t</p-button>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"col-12 md:col-6\">\n\t\t<div class=\"card\">\n\t\t\t<h5>Icons</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<button pButton pRipple icon=\"pi pi-star-fill\"></button>\n\t\t\t\t<button pButton pRipple label=\"Submit\" icon=\"pi pi-bookmark\"></button>\n\t\t\t\t<button pButton pRipple label=\"Submit\" icon=\"pi pi-bookmark\" iconPos=\"right\"></button>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>Raised</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Primary\" class=\"p-button-raised\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Secondary\" class=\"p-button-raised p-button-secondary\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Success\" class=\"p-button-raised p-button-success\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Info\" class=\"p-button-raised p-button-info\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Warning\" class=\"p-button-raised p-button-warning\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Help\" class=\"p-button-raised p-button-help\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Danger\" class=\"p-button-raised p-button-danger\"></button>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>Rounded</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Primary\" class=\"p-button-rounded\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Secondary\" class=\"p-button-rounded p-button-secondary\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Success\" class=\"p-button-rounded p-button-success\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Info\" class=\"p-button-rounded p-button-info\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Warning\" class=\"p-button-rounded p-button-warning\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Help\" class=\"p-button-rounded p-button-help\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" label=\"Danger\" class=\"p-button-rounded p-button-danger\"></button>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>Rounded Icons</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-check\" class=\"p-button-rounded\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-bookmark\" class=\"p-button-rounded p-button-secondary\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-search\" class=\"p-button-rounded p-button-success\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-user\" class=\"p-button-rounded p-button-info\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-bell\" class=\"p-button-rounded p-button-warning\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-heart\" class=\"p-button-rounded p-button-help\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-times\" class=\"p-button-rounded p-button-danger\"></button>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>Rounded Text</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-check\" class=\"p-button-rounded p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-bookmark\" class=\"p-button-rounded p-button-secondary p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-search\" class=\"p-button-rounded p-button-success p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-user\" class=\"p-button-rounded p-button-info p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-bell\" class=\"p-button-rounded p-button-warning p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-heart\" class=\"p-button-rounded p-button-help p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-times\" class=\"p-button-rounded p-button-danger p-button-text\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-filter\" class=\"p-button-rounded p-button-text p-button-plain\"></button>\n\t\t\t</div>\n\t\t</div>\n\t\t\n\t\t<div class=\"card\">\n\t\t\t<h5>Rounded Outlined</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-check\" class=\"p-button-rounded p-button-outlined\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-bookmark\" class=\"p-button-rounded p-button-secondary p-button-outlined\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-search\" class=\"p-button-rounded p-button-success p-button-outlined\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-user\" class=\"p-button-rounded p-button-info p-button-outlined\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-bell\" class=\"p-button-rounded p-button-warning p-button-outlined\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-heart\" class=\"p-button-rounded p-button-help p-button-outlined\"></button>\n\t\t\t\t<button pButton pRipple type=\"button\" icon=\"pi pi-times\" class=\"p-button-rounded p-button-danger p-button-outlined\"></button>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>Loading</h5>\n\t\t\t<div class=\"flex flex-wrap gap-2\">\n\t\t\t\t<p-button label=\"Search\" icon=\"pi pi-search\" [loading]=\"loading[0]\" (onClick)=\"load(0)\"></p-button>\n\t\t\t\t<p-button label=\"Search\" icon=\"pi pi-search\" iconPos=\"right\" [loading]=\"loading[1]\" (onClick)=\"load(1)\"></p-button>\n\t\t\t\t<p-button icon=\"pi pi-search\" [loading]=\"loading[2]\" (onClick)=\"load(2)\"></p-button>\n\t\t\t\t<p-button label=\"Search\" [loading]=\"loading[3]\" (onClick)=\"load(3)\"></p-button>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>"
+            }
         },
         {
             "name": "ChartsDemoComponent",
@@ -7688,13 +7685,14 @@
         },
         {
             "name": "TreeDemoComponent",
-            "id": "component-TreeDemoComponent-440c17c22613c19a67a9e28f54d418f7ef1add188a17d90d01e4aa3d5893a087d247cf0327f8fbc106792e31e661b2ed671dd13b3282267931d354ee012141c7",
+            "id": "component-TreeDemoComponent-6f5fdf5ad2bb07512d02477c3cc1848b10e47b94ba0354e3e5e76c5fe14f53519c69427c975847c2d4b2ec3ff627f1cfe8877bcd5237885499f5442b340cba27",
             "file": "src/app/demo/components/uikit/tree/treedemo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
+            "selector": "app-treedemo",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
@@ -7707,7 +7705,7 @@
                     "name": "collapsedIcon",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
+                    "line": 26,
                     "type": "string",
                     "decorators": []
                 },
@@ -7716,7 +7714,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 29,
+                    "line": 30,
                     "type": "any[]",
                     "decorators": []
                 },
@@ -7724,7 +7722,7 @@
                     "name": "expandedIcon",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "line": 27,
                     "type": "string",
                     "decorators": []
                 },
@@ -7732,7 +7730,7 @@
                     "name": "fileIcon",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 27,
+                    "line": 28,
                     "type": "string",
                     "decorators": []
                 },
@@ -7741,7 +7739,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 15,
                     "type": "TreeNode[]",
                     "decorators": []
                 },
@@ -7749,7 +7747,7 @@
                     "name": "selectionMode",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
+                    "line": 10,
                     "type": "string",
                     "decorators": []
                 },
@@ -7758,7 +7756,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 8,
+                    "line": 9,
                     "type": "TreeNode[]",
                     "decorators": []
                 }
@@ -7769,7 +7767,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 13,
                     "type": "EventEmitter"
                 }
             ],
@@ -7782,7 +7780,7 @@
                     "type": "TreeNode[]",
                     "optional": false,
                     "description": "",
-                    "line": 16
+                    "line": 17
                 },
                 {
                     "name": "files3",
@@ -7792,7 +7790,7 @@
                     "type": "TreeNode[]",
                     "optional": false,
                     "description": "",
-                    "line": 18
+                    "line": 19
                 },
                 {
                     "name": "selectedFiles1",
@@ -7802,7 +7800,7 @@
                     "type": "TreeNode[]",
                     "optional": false,
                     "description": "",
-                    "line": 20
+                    "line": 21
                 },
                 {
                     "name": "selectedFiles2",
@@ -7812,7 +7810,7 @@
                     "type": "TreeNode[]",
                     "optional": false,
                     "description": "",
-                    "line": 22
+                    "line": 23
                 },
                 {
                     "name": "selectedFiles3",
@@ -7822,7 +7820,7 @@
                     "type": "TreeNode",
                     "optional": false,
                     "description": "",
-                    "line": 24
+                    "line": 25
                 }
             ],
             "methodsClass": [
@@ -7832,7 +7830,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 33,
+                    "line": 34,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -7846,7 +7844,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { NodeService } from 'src/app/demo/service/node.service';\nimport { TreeNode } from 'primeng/api';\n@Component({\n    templateUrl: './treedemo.component.html'\n})\nexport class TreeDemoComponent implements OnInit {\n    @Input() value: TreeNode[] = [];\n    @Input() selectionMode: string;\n\n    @Output()\n    onClick = new EventEmitter<Event>();\n\n    @Input() files1: TreeNode[] = [];\n\n    files2: TreeNode[] = [];\n\n    files3: TreeNode[] = [];\n\n    selectedFiles1: TreeNode[] = [];\n\n    selectedFiles2: TreeNode[] = [];\n\n    selectedFiles3: TreeNode = {};\n    @Input() collapsedIcon: string;\n    @Input() expandedIcon: string;\n    @Input() fileIcon: string;\n\n    @Input() cols: any[] = [];\n\n    constructor(private nodeService: NodeService) { }\n\n    ngOnInit() {\n\n        this.nodeService.getFiles().then(files => this.value = files);\n        this.nodeService.getFilesystem().then(files => this.files2 = files);\n        this.nodeService.getFiles().then(files => {\n            this.files3 = [{\n                label: 'Root',\n                children: files\n            }];\n        });\n\n        this.cols = [\n            { field: 'name', header: 'Name' },\n            { field: 'size', header: 'Size' },\n            { field: 'type', header: 'Type' }\n        ];\n        console.log(this.value);\n\n    }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { NodeService } from 'src/app/demo/service/node.service';\nimport { TreeNode } from 'primeng/api';\n@Component({\n    selector: 'app-treedemo',\n    templateUrl: './treedemo.component.html'\n})\nexport class TreeDemoComponent implements OnInit {\n    @Input() value: TreeNode[] = [];\n    @Input() selectionMode: string;\n\n    @Output()\n    onClick = new EventEmitter<Event>();\n\n    @Input() files1: TreeNode[] = [];\n\n    files2: TreeNode[] = [];\n\n    files3: TreeNode[] = [];\n\n    selectedFiles1: TreeNode[] = [];\n\n    selectedFiles2: TreeNode[] = [];\n\n    selectedFiles3: TreeNode = {};\n    @Input() collapsedIcon: string;\n    @Input() expandedIcon: string;\n    @Input() fileIcon: string;\n\n    @Input() cols: any[] = [];\n\n    constructor(private nodeService: NodeService) { }\n\n    ngOnInit() {\n\n        this.nodeService.getFiles().then(files => this.value = files);\n        this.nodeService.getFilesystem().then(files => this.files2 = files);\n        this.nodeService.getFiles().then(files => {\n            this.files3 = [{\n                label: 'Root',\n                children: files\n            }];\n        });\n\n        this.cols = [\n            { field: 'name', header: 'Name' },\n            { field: 'size', header: 'Size' },\n            { field: 'type', header: 'Type' }\n        ];\n        console.log(this.value);\n\n    }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -7863,7 +7861,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 29,
+                "line": 30,
                 "jsdoctags": [
                     {
                         "name": "nodeService",
@@ -8073,13 +8071,13 @@
         },
         {
             "name": "AppModule",
-            "id": "module-AppModule-b3d3cde27742c42880a03ccfcf9f637902b96748d684b1b19a1874205c5bbdb6c712e246cca552fbcb5cb67d616d0a4680f12d06a6c2a2652f164a4566decf79",
+            "id": "module-AppModule-ada2d91e809db43b500eef876e38aa19eb3b33b8fdca55e08c073200a2b9d444d287769ca0a57c4209c209200febb2522157909667da8b9b57f5592632258a97",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';\nimport { AppComponent } from './app.component';\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppLayoutModule } from './layout/app.layout.module';\nimport { NotfoundComponent } from './demo/components/notfound/notfound.component';\nimport { ProductService } from './demo/service/product.service';\nimport { CountryService } from './demo/service/country.service';\nimport { CustomerService } from './demo/service/customer.service';\nimport { EventService } from './demo/service/event.service';\nimport { IconService } from './demo/service/icon.service';\nimport { NodeService } from './demo/service/node.service';\nimport { PhotoService } from './demo/service/photo.service';\n\n@NgModule({\n    declarations: [AppComponent, NotfoundComponent],\n    imports: [AppRoutingModule, AppLayoutModule],\n    providers: [\n        { provide: LocationStrategy, useClass: PathLocationStrategy },\n        CountryService, CustomerService, EventService, IconService, NodeService,\n        PhotoService, ProductService\n    ],\n    bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';\nimport { AppComponent } from './app.component';\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppLayoutModule } from './layout/app.layout.module';\nimport { NotfoundComponent } from './demo/components/notfound/notfound.component';\nimport { ProductService } from './demo/service/product.service';\nimport { CountryService } from './demo/service/country.service';\nimport { CustomerService } from './demo/service/customer.service';\nimport { EventService } from './demo/service/event.service';\nimport { IconService } from './demo/service/icon.service';\nimport { NodeService } from './demo/service/node.service';\nimport { PhotoService } from './demo/service/photo.service';\n\n@NgModule({\n    declarations: [AppComponent, NotfoundComponent],\n    imports: [AppRoutingModule, AppLayoutModule],\n    providers: [\n        { provide: LocationStrategy, useClass: PathLocationStrategy },\n        CountryService, CustomerService, EventService, IconService, NodeService,\n        PhotoService, ProductService\n    ],\n    bootstrap: [AppComponent],\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",
