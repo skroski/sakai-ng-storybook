@@ -8,7 +8,13 @@ import { MenuItem } from "primeng/api";
     type="button"
     (click)="onClick.emit($event)"
     [ngClass]="classes"
-    [ngStyle]="{ 'background-color': backgroundColor }"
+    [ngStyle]="{ 
+    'background-color': backgroundColor, 
+    'border': border, 
+    'padding': padding, 
+    'color': color,  
+    'border-radius': borderRadius,
+    }"
   >
     {{ label }}
   </button>`,
@@ -21,6 +27,10 @@ export class ButtonDemoComponent implements OnInit {
 
     @Input()
     backgroundColor?: string;
+    border?: string;
+    padding?: string;
+    color?: string;
+    borderRadius?: string;
 
     @Input()
     size: "small" | "medium" | "large" = "medium";
