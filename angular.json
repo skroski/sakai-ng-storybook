@@ -105,6 +105,9 @@
             "configDir": ".storybook",
             "browserTarget": "sakai-ng-storybook:build",
             "compodoc": true,
+            "styles": [
+              "src/styles.scss"
+            ],
             "compodocArgs": [
               "-e",
               "json",
@@ -118,6 +121,9 @@
           "builder": "@storybook/angular:build-storybook",
           "options": {
             "configDir": ".storybook",
+            "styles": [
+              "src/styles.scss"
+            ],
             "browserTarget": "sakai-ng-storybook:build",
             "compodoc": true,
             "compodocArgs": [

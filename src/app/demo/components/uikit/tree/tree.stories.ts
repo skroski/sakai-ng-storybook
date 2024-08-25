@@ -3,7 +3,7 @@ import { fn } from '@storybook/test';
 import { TreeDemoComponent } from './treedemo.component';
 import { NodeService } from 'src/app/demo/service/node.service';
 import { TreeModule } from 'primeng/tree';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 
 const meta: Meta<TreeDemoComponent> = {
@@ -16,8 +16,10 @@ const meta: Meta<TreeDemoComponent> = {
   decorators: [
     moduleMetadata({
       declarations: [TreeDemoComponent],
-      imports: [TreeModule, HttpClient],
-      providers: [NodeService],
+      imports: [TreeModule, HttpClientModule, HttpClient],
+      providers: [
+        NodeService
+      ],
     }),
   ],
   tags: ['autodocs'],

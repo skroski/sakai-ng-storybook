@@ -3402,7 +3402,7 @@
         },
         {
             "name": "ButtonDemoComponent",
-            "id": "component-ButtonDemoComponent-6b62ae9d6314d1adbac38f69e3d16f704fa7a987985a1213b6c6868dd66cc095ee52145c7e3cd3df904ea247e443a6d1db813139b7e45483c05173a0fc869d71",
+            "id": "component-ButtonDemoComponent-4738f9d3f673585d0b1c817f3432daa5031a05bc9de0ee01b1a43b1425eeba940a1568bc020ad018e957e4974a4e7c369090d39c36d0e03083cdddd785130701",
             "file": "src/app/demo/components/uikit/button/buttondemo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3412,7 +3412,7 @@
             "selector": "app-buttondemo",
             "styleUrls": [],
             "styles": [],
-            "template": "<button    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>",
+            "template": "<button    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{\n    'background-color': backgroundColor,\n    'border': border,\n    'padding': padding,\n    'color': color,\n    'border-radius': borderRadius,\n    }\"\n  >\n    {{ label }}\n  </button>",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -3421,7 +3421,7 @@
                     "name": "backgroundColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 29,
                     "type": "string",
                     "decorators": []
                 },
@@ -3429,7 +3429,7 @@
                     "name": "label",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 29,
+                    "line": 39,
                     "type": "string",
                     "decorators": []
                 },
@@ -3438,7 +3438,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 26,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -3447,7 +3447,7 @@
                     "defaultValue": "\"medium\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "line": 36,
                     "type": "\"small\" | \"medium\" | \"large\"",
                     "decorators": []
                 }
@@ -3458,11 +3458,38 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 32,
+                    "line": 42,
                     "type": "EventEmitter"
                 }
             ],
             "propertiesClass": [
+                {
+                    "name": "border",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 30
+                },
+                {
+                    "name": "borderRadius",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 33
+                },
+                {
+                    "name": "color",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 32
+                },
                 {
                     "name": "items",
                     "defaultValue": "[]",
@@ -3471,7 +3498,7 @@
                     "type": "MenuItem[]",
                     "optional": false,
                     "description": "",
-                    "line": 42
+                    "line": 52
                 },
                 {
                     "name": "loading",
@@ -3481,7 +3508,16 @@
                     "type": "[]",
                     "optional": false,
                     "description": "",
-                    "line": 44
+                    "line": 54
+                },
+                {
+                    "name": "padding",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 31
                 }
             ],
             "methodsClass": [
@@ -3498,7 +3534,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 56,
+                    "line": 66,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3519,7 +3555,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 46,
+                    "line": 56,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -3533,7 +3569,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from \"@angular/core\";\nimport { MenuItem } from \"primeng/api\";\n\n@Component({\n    //templateUrl: './buttondemo.component.html',\n    selector: 'app-buttondemo',\n    template: `<button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n    styleUrl: './buttondemo.component.scss',\n})\nexport class ButtonDemoComponent implements OnInit {\n\n    @Input()\n    primary = false;\n\n    @Input()\n    backgroundColor?: string;\n\n    @Input()\n    size: \"small\" | \"medium\" | \"large\" = \"medium\";\n\n    @Input()\n    label?: string;\n\n    @Output()\n    onClick = new EventEmitter<Event>();\n\n    public get classes(): string[] {\n        const mode = this.primary\n            ? \"p-button-primary\"\n            : \"p-button-secondary\";\n\n        return [\"p-element p-ripple p-component p-button \", `p-button-${this.size}`, mode];\n    }\n\n    items: MenuItem[] = [];\n\n    loading = [false, false, false, false];\n\n    ngOnInit() {\n        this.items = [\n            { label: \"Update\", icon: \"pi pi-refresh\" },\n            { label: \"Delete\", icon: \"pi pi-times\" },\n            { label: \"Angular.io\", icon: \"pi pi-info\", url: \"http://angular.io\" },\n            { separator: true },\n            { label: \"Setup\", icon: \"pi pi-cog\" },\n        ];\n    }\n\n    load(index: number) {\n        this.loading[index] = true;\n        setTimeout(() => (this.loading[index] = false), 1000);\n    }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from \"@angular/core\";\nimport { MenuItem } from \"primeng/api\";\n\n@Component({\n    //templateUrl: './buttondemo.component.html',\n    selector: 'app-buttondemo',\n    template: `<button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ \n    'background-color': backgroundColor, \n    'border': border, \n    'padding': padding, \n    'color': color,  \n    'border-radius': borderRadius,\n    }\"\n  >\n    {{ label }}\n  </button>`,\n    styleUrl: './buttondemo.component.scss',\n})\nexport class ButtonDemoComponent implements OnInit {\n\n    @Input()\n    primary = false;\n\n    @Input()\n    backgroundColor?: string;\n    border?: string;\n    padding?: string;\n    color?: string;\n    borderRadius?: string;\n\n    @Input()\n    size: \"small\" | \"medium\" | \"large\" = \"medium\";\n\n    @Input()\n    label?: string;\n\n    @Output()\n    onClick = new EventEmitter<Event>();\n\n    public get classes(): string[] {\n        const mode = this.primary\n            ? \"p-button-primary\"\n            : \"p-button-secondary\";\n\n        return [\"p-element p-ripple p-component p-button \", `p-button-${this.size}`, mode];\n    }\n\n    items: MenuItem[] = [];\n\n    loading = [false, false, false, false];\n\n    ngOnInit() {\n        this.items = [\n            { label: \"Update\", icon: \"pi pi-refresh\" },\n            { label: \"Delete\", icon: \"pi pi-times\" },\n            { label: \"Angular.io\", icon: \"pi pi-info\", url: \"http://angular.io\" },\n            { separator: true },\n            { label: \"Setup\", icon: \"pi pi-cog\" },\n        ];\n    }\n\n    load(index: number) {\n        this.loading[index] = true;\n        setTimeout(() => (this.loading[index] = false), 1000);\n    }\n}\n",
             "styleUrl": "./buttondemo.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -3549,7 +3585,7 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 34
+                        "line": 44
                     }
                 }
             }
@@ -10763,7 +10799,7 @@
                 "linktype": "component",
                 "name": "ButtonDemoComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/10",
+                "coverageCount": "0/14",
                 "status": "low"
             },
             {

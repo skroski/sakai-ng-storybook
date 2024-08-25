@@ -12,7 +12,21 @@ const meta: Meta<ButtonDemoComponent> = {
     backgroundColor: {
       control: 'color',
     }
+  },
+  parameters: {
+    docs: {
+      canvas: { sourceState: 'shown' }
+    },
+    backgrounds: {
+      values:
+        [
+          { name: "black", value: "#222" },
+          { name: "dark", value: "#444" },
+          { name: "light", value: "#f8f8f8" },
+          { name: "white", value: "#fff" },
 
+        ],
+    }
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },
@@ -49,11 +63,7 @@ export const Secondary: Story = {
     border: "2px solid #363030",
 
   },
-  parameters: {
-    docs: {
-      canvas: { sourceState: 'shown' }
-    }
-  }
+
 };
 export const Disable: Story = {
   args: {
