@@ -572,9 +572,23 @@
     "injectables": [
         {
             "name": "CountryService",
-            "id": "injectable-CountryService-5dc2f1588d6aaa404895efc7dc92d7c84c3734a438104c260ac72a3c741005491203e86ea344a152c83696471d838393a2a73dab1b6f734f672d3f48d98b2659",
+            "id": "injectable-CountryService-4c8c4af090b182d99226c1b3e03037be429b63e3be2265d4df5fd3aae3828f7275422411b46a6e73804067796676ff2f9dc830b025f09ae0904a213421d64819",
             "file": "src/app/demo/service/country.service.ts",
-            "properties": [],
+            "properties": [
+                {
+                    "name": "http",
+                    "defaultValue": "inject(HttpClient)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 6,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
             "methods": [
                 {
                     "name": "getCountries",
@@ -591,33 +605,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\n\n@Injectable()\nexport class CountryService {\n\n    constructor(private http: HttpClient) { }\n\n    getCountries() {\n        return this.http.get<any>('assets/demo/data/countries.json')\n            .toPromise()\n            .then(res => res.data as any[])\n            .then(data => data);\n    }\n}\n",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "http",
-                        "type": "HttpClient",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 5,
-                "jsdoctags": [
-                    {
-                        "name": "http",
-                        "type": "HttpClient",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { inject, Injectable } from '@angular/core';\n\n@Injectable()\nexport class CountryService {\n    private http = inject(HttpClient);\n    //private countries: string[] = [];\n\n    getCountries() {\n        return this.http.get<any>('http://localhost:4200/assets/demo/data/countries.json')\n            .toPromise()\n            .then(res => res.data as any[])\n            .then(data => data);\n    }\n}\n",
             "extends": [],
             "type": "injectable"
         },
@@ -5197,240 +5185,98 @@
         },
         {
             "name": "InputDemoComponent",
-            "id": "component-InputDemoComponent-bdf03fe734f3c70ee410e80e238c7b83e4680fcdcf6f681895156b860a04fc6ec58e050e11ee29c7c5138e83e09244193dcf24b2b22370c0319d44a708c6db99",
+            "id": "component-InputDemoComponent-d98dab6c230459ce9bab47f40d11d27b305830714e52e6c7aca02db615cf5996cc0222bf5df52fb49aee6e2f952dce759f3a7f34b8a2cf400bce3540873c7b0d",
             "file": "src/app/demo/components/uikit/input/inputdemo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
+            "selector": "app-inputdemo",
             "styleUrls": [],
             "styles": [],
-            "templateUrl": [
-                "./inputdemo.component.html"
-            ],
+            "template": "<input        type=\"text\"\n       [placeholder]=\"placeholder\"\n       [ngStyle]=\"{\n        'background-color': backgroundColor,\n        'border': border,\n        'padding': padding,\n        'color': color,\n        'border-radius': borderRadius,\n        'width': '40%',\n        'height': '40px',\n        }\"\n      />\n",
+            "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [
+            "inputsClass": [
                 {
-                    "name": "cities",
-                    "defaultValue": "[]",
+                    "name": "backgroundColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "SelectItem[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 28
+                    "line": 30,
+                    "type": "string",
+                    "decorators": []
                 },
                 {
-                    "name": "countries",
-                    "defaultValue": "[]",
+                    "name": "border",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "any[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 10
+                    "line": 32,
+                    "type": "string",
+                    "decorators": []
                 },
                 {
-                    "name": "filteredCountries",
-                    "defaultValue": "[]",
+                    "name": "borderRadius",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "any[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 12
+                    "line": 38,
+                    "type": "string",
+                    "decorators": []
                 },
                 {
-                    "name": "paymentOptions",
-                    "defaultValue": "[]",
+                    "name": "color",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "any[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 38
+                    "line": 36,
+                    "type": "string",
+                    "decorators": []
                 },
                 {
-                    "name": "selectedCountryAdvanced",
-                    "defaultValue": "[]",
+                    "name": "padding",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "any[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 14
+                    "line": 34,
+                    "type": "string",
+                    "decorators": []
                 },
                 {
-                    "name": "selectedDrop",
-                    "defaultValue": "{ value: '' }",
+                    "name": "placeholder",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "SelectItem",
-                    "optional": false,
-                    "description": "",
-                    "line": 32
+                    "line": 27,
+                    "type": "string",
+                    "decorators": []
                 },
                 {
-                    "name": "selectedList",
-                    "defaultValue": "{ value: '' }",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "SelectItem",
-                    "optional": false,
-                    "description": "",
-                    "line": 30
-                },
-                {
-                    "name": "selectedMulti",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "any[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 34
-                },
-                {
-                    "name": "valCheck",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 22
-                },
-                {
-                    "name": "valCheck2",
+                    "name": "primary",
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
+                    "line": 24,
                     "type": "boolean",
-                    "optional": false,
-                    "description": "",
-                    "line": 24
+                    "decorators": []
                 },
                 {
-                    "name": "valColor",
-                    "defaultValue": "'#424242'",
+                    "name": "size",
+                    "defaultValue": "\"medium\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 18
-                },
-                {
-                    "name": "valRadio",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 20
-                },
-                {
-                    "name": "valSelect1",
-                    "defaultValue": "\"\"",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 40
-                },
-                {
-                    "name": "valSelect2",
-                    "defaultValue": "\"\"",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 42
-                },
-                {
-                    "name": "valSlider",
-                    "defaultValue": "50",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "number",
-                    "optional": false,
-                    "description": "",
-                    "line": 16
-                },
-                {
-                    "name": "valSwitch",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "boolean",
-                    "optional": false,
-                    "description": "",
-                    "line": 26
-                },
-                {
-                    "name": "valToggle",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 36
-                },
-                {
-                    "name": "valueKnob",
-                    "defaultValue": "20",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "number",
-                    "optional": false,
-                    "description": "",
-                    "line": 44
+                    "line": 41,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
                 }
             ],
+            "outputsClass": [],
+            "propertiesClass": [],
             "methodsClass": [
-                {
-                    "name": "filterCountry",
-                    "args": [
-                        {
-                            "name": "event",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 68,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "event",
-                            "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
                 {
                     "name": "ngOnInit",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 48,
+                    "line": 52,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -5444,41 +5290,26 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { SelectItem } from 'primeng/api';\nimport { CountryService } from 'src/app/demo/service/country.service';\n\n@Component({\n    templateUrl: './inputdemo.component.html'\n})\nexport class InputDemoComponent implements OnInit {\n    \n    countries: any[] = [];\n\n    filteredCountries: any[] = [];\n\n    selectedCountryAdvanced: any[] = [];\n\n    valSlider = 50;\n\n    valColor = '#424242';\n\n    valRadio: string = '';\n\n    valCheck: string[] = [];\n\n    valCheck2: boolean = false;\n\n    valSwitch: boolean = false;\n\n    cities: SelectItem[] = [];\n\n    selectedList: SelectItem = { value: '' };\n\n    selectedDrop: SelectItem = { value: '' };\n\n    selectedMulti: any[] = [];\n\n    valToggle = false;\n\n    paymentOptions: any[] = [];\n\n    valSelect1: string = \"\";\n\n    valSelect2: string = \"\";\n\n    valueKnob = 20;\n\n    constructor(private countryService: CountryService) { }\n\n    ngOnInit() {\n        this.countryService.getCountries().then(countries => {\n            this.countries = countries;\n        });\n\n        this.cities = [\n            { label: 'New York', value: { id: 1, name: 'New York', code: 'NY' } },\n            { label: 'Rome', value: { id: 2, name: 'Rome', code: 'RM' } },\n            { label: 'London', value: { id: 3, name: 'London', code: 'LDN' } },\n            { label: 'Istanbul', value: { id: 4, name: 'Istanbul', code: 'IST' } },\n            { label: 'Paris', value: { id: 5, name: 'Paris', code: 'PRS' } }\n        ];\n\n        this.paymentOptions = [\n            { name: 'Option 1', value: 1 },\n            { name: 'Option 2', value: 2 },\n            { name: 'Option 3', value: 3 }\n        ];\n    }\n\n    filterCountry(event: any) {\n        const filtered: any[] = [];\n        const query = event.query;\n        for (let i = 0; i < this.countries.length; i++) {\n            const country = this.countries[i];\n            if (country.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {\n                filtered.push(country);\n            }\n        }\n\n        this.filteredCountries = filtered;\n    }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from \"@angular/core\";\n\n@Component({\n    selector: 'app-inputdemo',\n    template: `<input\n        type=\"text\"\n       [placeholder]=\"placeholder\"\n       [ngStyle]=\"{ \n        'background-color': backgroundColor, \n        'border': border,\n        'padding': padding, \n        'color': color,  \n        'border-radius': borderRadius,\n        'width': '40%',\n        'height': '40px',\n        }\"\n      />\n  `,\n    styleUrl: './inputdemo.component.scss',\n})\nexport class InputDemoComponent implements OnInit {\n\n    @Input()\n    primary = false;\n\n    @Input()\n    placeholder?: string\n\n    @Input()\n    backgroundColor?: string;\n    @Input()\n    border?: string;\n    @Input()\n    padding?: string;\n    @Input()\n    color?: string;\n    @Input()\n    borderRadius?: string;\n\n    @Input()\n    size: \"small\" | \"medium\" | \"large\" = \"medium\";\n\n    public get classes(): string[] {\n        const mode = this.primary\n            ? \"p-input-primary\"\n            : \"p-input-secondary\";\n\n        return [\"p-element p-ripple p-component p-input \", `p-input-${this.size}`, mode];\n    }\n\n\n    ngOnInit() {\n        console.log();\n    }\n\n}\n",
+            "styleUrl": "./inputdemo.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "countryService",
-                        "type": "CountryService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 44,
-                "jsdoctags": [
-                    {
-                        "name": "countryService",
-                        "type": "CountryService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
             "extends": [],
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"grid p-fluid\">\n\t<div class=\"col-12 md:col-6\">\n\t\t<div class=\"card\">\n\t\t\t<h5>InputText</h5>\n\t\t\t<div class=\"grid formgrid\">\n\t\t\t\t<div class=\"col-12 mb-2 lg:col-4 lg:mb-0\">\n\t\t\t\t\t<input type=\"text\" pInputText placeholder=\"Default\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-12 mb-2 lg:col-4 lg:mb-0\">\n\t\t\t\t\t<input type=\"text\" pInputText placeholder=\"Disabled\" [disabled]=\"true\"/>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-12 mb-2 lg:col-4 lg:mb-0\">\n\t\t\t\t\t<input type=\"text\" pInputText placeholder=\"Invalid\" class=\"ng-dirty ng-invalid\"/>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<h5>Icons</h5>\n\t\t\t<div class=\"grid formgrid\">\n\t\t\t\t<div class=\"col-12 mb-2 lg:col-4 lg:mb-0\">\n\t\t\t\t\t<span class=\"p-input-icon-left\">\n\t\t\t\t\t\t<i class=\"pi pi-user\"></i>\n\t\t\t\t\t\t<input type=\"text\" pInputText placeholder=\"Username\"/>\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-12 mb-2 lg:col-4 lg:mb-0\">\n\t\t\t\t\t<span class=\"p-input-icon-right\">\n\t\t\t\t\t\t<input type=\"text\" pInputText placeholder=\"Search\"/>\n\t\t\t\t\t\t<i class=\"pi pi-search\"></i>\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-12 mb-2 lg:col-4 lg:mb-0\">\n\t\t\t\t\t<span class=\"p-input-icon-left p-input-icon-right\">\n\t\t\t\t\t\t<i class=\"pi pi-user\"></i>\n\t\t\t\t\t\t<input type=\"text\" pInputText placeholder=\"Search\"/>\n\t\t\t\t\t\t<i class=\"pi pi-search\"></i>\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<h5>Float Label</h5>\n\t\t\t<span class=\"p-float-label\">\n\t\t\t\t<input id=\"float-input\" type=\"text\" pInputText>\n\t\t\t\t<label for=\"float-input\">Username</label>\n\t\t\t</span>\n\n\t\t\t<h5>Textarea</h5>\n\t\t\t<textarea rows=\"5\" cols=\"30\" placeholder=\"Your Message\" pInputTextarea></textarea>\n\n\t\t\t<h5>AutoComplete</h5>\n\t\t\t<p-autoComplete [(ngModel)]=\"selectedCountryAdvanced\" [suggestions]=\"filteredCountries\" (completeMethod)=\"filterCountry($event)\" field=\"name\" [dropdown]=\"true\">\n\t\t\t</p-autoComplete>\n\n\t\t\t<h5>Calendar</h5>\n\t\t\t<p-calendar [showIcon]=\"true\" inputId=\"icon\"></p-calendar>\n\n\t\t\t<h5>InputNumber</h5>\n\t\t\t<p-inputNumber mode=\"decimal\" [showButtons]=\"true\" [min]=\"0\" [max]=\"100\">\n\t\t\t</p-inputNumber>\n\n\t\t\t<h5>Chips</h5>\n\t\t\t<p-chips></p-chips>\n\t\t</div>\n\n\t\t<div class=\"card\">\n            <div class=\"grid\">\n                <div class=\"col-12\">\n                    <h5>Slider</h5>\n                    <input type=\"text\" pInputText [(ngModel)]=\"valSlider\" readonly/>\n                    <p-slider [(ngModel)]=\"valSlider\"></p-slider>\n                </div>\n                <div class=\"col-12 md:col-6\">\n                    <h5>Rating</h5>\n                    <p-rating></p-rating>\n                </div>\n                <div class=\"col-12 md:col-6\">\n                    <h5>ColorPicker</h5>\n                    <p-colorPicker [(ngModel)]=\"valColor\"></p-colorPicker>\n                </div>\n                <div class=\"col-12\">\n                    <h5>Knob</h5>\n                    <p-knob [(ngModel)]=\"valueKnob\" valueTemplate=\"{value}%\" [step]=\"10\" [min]=\"-50\" [max]=\"50\"></p-knob>\n                </div>\n            </div>\n\t\t</div>\n\t</div>\n\n\t<div class=\"col-12 md:col-6\">\n\t\t<div class=\"card\">\n\t\t\t<h5>RadioButton</h5>\n\t\t\t<div class=\"grid formgrid\">\n\t\t\t\t<div class=\"col-12 md:col-4\">\n\t\t\t\t\t<div class=\"field-radiobutton\">\n\t\t\t\t\t\t<p-radioButton name=\"city\" value=\"Chicago\" [(ngModel)]=\"valRadio\" id=\"city1\"></p-radioButton>\n\t\t\t\t\t\t<label for=\"city1\">Chicago</label>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-12 md:col-4\">\n\t\t\t\t\t<div class=\"field-radiobutton\">\n\t\t\t\t\t\t<p-radioButton name=\"city\" value=\"Los Angeles\" [(ngModel)]=\"valRadio\"\n\t\t\t\t\t\t\t\t\t   id=\"city2\"></p-radioButton>\n\t\t\t\t\t\t<label for=\"city2\">Los Angeles</label>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-12 md:col-4\">\n\t\t\t\t\t<div class=\"field-radiobutton\">\n\t\t\t\t\t\t<p-radioButton name=\"city\" value=\"New York\" [(ngModel)]=\"valRadio\" id=\"city3\"></p-radioButton>\n\t\t\t\t\t\t<label for=\"city3\">New York</label>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<h5>Checkbox</h5>\n\t\t\t<div class=\"grid formgrid\">\n\t\t\t\t<div class=\"col-12 md:col-4\">\n\t\t\t\t\t<div class=\"field-checkbox\">\n\t\t\t\t\t\t<p-checkbox name=\"group1\" value=\"New York\" [(ngModel)]=\"valCheck\" id=\"ny\"></p-checkbox>\n\t\t\t\t\t\t<label for=\"ny\">New York</label>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-12 md:col-4\">\n\t\t\t\t\t<div class=\"field-checkbox\">\n\t\t\t\t\t\t<p-checkbox name=\"group1\" value=\"San Francisco\" [(ngModel)]=\"valCheck\" id=\"sf\"></p-checkbox>\n\t\t\t\t\t\t<label for=\"sf\">San Francisco</label>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-12 md:col-4\">\n\t\t\t\t\t<div class=\"field-checkbox\">\n\t\t\t\t\t\t<p-checkbox name=\"group1\" value=\"Los Angeles\" [(ngModel)]=\"valCheck\" id=\"la\"></p-checkbox>\n\t\t\t\t\t\t<label for=\"la\">Los Angeles</label>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<h5>Input Switch</h5>\n\t\t\t<p-inputSwitch [(ngModel)]=\"valSwitch\"></p-inputSwitch>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>Listbox</h5>\n\t\t\t<p-listbox [options]=\"cities\" [(ngModel)]=\"selectedList\" [filter]=\"true\"></p-listbox>\n\n\t\t\t<h5>Dropdown</h5>\n\t\t\t<p-dropdown [options]=\"cities\" [(ngModel)]=\"selectedDrop\" placeholder=\"Select a City\" [showClear]=\"true\"></p-dropdown>\n\n\t\t\t<h5>Multiselect</h5>\n\t\t\t<p-multiSelect [options]=\"countries\" [(ngModel)]=\"selectedMulti\" placeholder=\"Select a Country\" optionLabel=\"name\" class=\"multiselect-custom\" display=\"chip\">\n\t\t\t\t<ng-template let-country pTemplate=\"item\">\n\t\t\t\t\t<div class=\"flex align-items-center\">\n\t\t\t\t\t\t<img src=\"assets/demo/images/flag/flag_placeholder.png\" [class]=\"'flag flag-' + country.code.toLowerCase()\" style=\"width:21px\"/>\n\t\t\t\t\t\t<span class=\"ml-2\">{{country.name}}</span>\n\t\t\t\t\t</div>\n\t\t\t\t</ng-template>\n\t\t\t</p-multiSelect>\n\t\t</div>\n\n\t\t<div class=\"card\">\n\t\t\t<h5>ToggleButton</h5>\n\t\t\t<p-toggleButton [(ngModel)]=\"valToggle\" onLabel=\"Yes\" offLabel=\"No\" [style]=\"{'width': '10em'}\"></p-toggleButton>\n\n\t\t\t<h5>SelectOneButton</h5>\n\t\t\t<p-selectButton [options]=\"paymentOptions\" [(ngModel)]=\"valSelect1\" optionLabel=\"name\"></p-selectButton>\n\n\t\t\t<h5>SelectManyButton</h5>\n\t\t\t<p-selectButton [options]=\"paymentOptions\" [(ngModel)]=\"valSelect2\" [multiple]=\"true\" optionLabel=\"name\"></p-selectButton>\n\t\t</div>\n\t</div>\n\t\n\t<div class=\"col-12\">\n\t\t<div class=\"card\">\n\t\t\t<h5>InputGroup</h5>\n\t\t\t<div class=\"grid\">\n\t\t\t\t<div class=\"col-12 md:col-6\">\n                    <p-inputGroup>\n                        <p-inputGroupAddon>\n                            <i class=\"pi pi-user\"></i>\n                        </p-inputGroupAddon>\n                        <input pInputText type=\"text\" placeholder=\"Username\" />\n                    </p-inputGroup>\n                </div>\n\t\t\t\t<div class=\"col-12 md:col-6\">\n                    <p-inputGroup class=\"w-full\">\n                        <p-inputGroupAddon>\n                            <i class=\"pi pi-tags\" style=\"line-height: 1.25\"></i>\n                        </p-inputGroupAddon>\n\n                        <p-inputGroupAddon>\n                            <i class=\"pi pi-shopping-cart\" style=\"line-height: 1.25\"></i>\n                        </p-inputGroupAddon>\n\n                        <input type=\"text\" pInputText placeholder=\"Price\" />\n                        <p-inputGroupAddon>$</p-inputGroupAddon>\n                        <p-inputGroupAddon>.00</p-inputGroupAddon>\n                    </p-inputGroup>\n                </div>\n\t\t\t\t<div class=\"col-12 md:col-6\">\n                    <p-inputGroup>\n                        <button type=\"button\" pButton label=\"Search\"></button>\n                        <input type=\"text\" pInputText placeholder=\"Keyword\" />\n                    </p-inputGroup>\n                </div>\n\t\t\t\t<div class=\"col-12 md:col-6\">\n                    <p-inputGroup>\n                        <p-inputGroupAddon><p-checkbox [(ngModel)]=\"valCheck2\"\n                                [binary]=\"true\"></p-checkbox></p-inputGroupAddon>\n                        <input type=\"text\" pInputText placeholder=\"Username\" />\n                    </p-inputGroup>\n                </div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n"
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 43
+                    }
+                }
+            }
         },
         {
             "name": "InvalidStateDemoComponent",
@@ -7721,7 +7552,7 @@
         },
         {
             "name": "TreeDemoComponent",
-            "id": "component-TreeDemoComponent-6f5fdf5ad2bb07512d02477c3cc1848b10e47b94ba0354e3e5e76c5fe14f53519c69427c975847c2d4b2ec3ff627f1cfe8877bcd5237885499f5442b340cba27",
+            "id": "component-TreeDemoComponent-7ce6e0289d736d5aeb168674365bdd1552d0653291ba1839fdc57a836b865b78aedb316c6612a611545612e6e816877ccf026215961d34651ad2a816f27802b4",
             "file": "src/app/demo/components/uikit/tree/treedemo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -7731,9 +7562,8 @@
             "selector": "app-treedemo",
             "styleUrls": [],
             "styles": [],
-            "templateUrl": [
-                "./treedemo.component.html"
-            ],
+            "template": "<p-tree\n    [value]=\"value\"\n    selectionMode=\"single\"\n    expandedIcon=\"pi pi-folder\"\n    [(selection)]=\"files1\"\n  ></p-tree>\n",
+            "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
@@ -7741,7 +7571,7 @@
                     "name": "collapsedIcon",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 26,
+                    "line": 34,
                     "type": "string",
                     "decorators": []
                 },
@@ -7750,7 +7580,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 30,
+                    "line": 38,
                     "type": "any[]",
                     "decorators": []
                 },
@@ -7758,7 +7588,7 @@
                     "name": "expandedIcon",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 27,
+                    "line": 35,
                     "type": "string",
                     "decorators": []
                 },
@@ -7766,7 +7596,7 @@
                     "name": "fileIcon",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 28,
+                    "line": 36,
                     "type": "string",
                     "decorators": []
                 },
@@ -7775,7 +7605,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 23,
                     "type": "TreeNode[]",
                     "decorators": []
                 },
@@ -7783,7 +7613,7 @@
                     "name": "selectionMode",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 18,
                     "type": "string",
                     "decorators": []
                 },
@@ -7792,7 +7622,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
+                    "line": 17,
                     "type": "TreeNode[]",
                     "decorators": []
                 }
@@ -7803,7 +7633,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 21,
                     "type": "EventEmitter"
                 }
             ],
@@ -7816,7 +7646,7 @@
                     "type": "TreeNode[]",
                     "optional": false,
                     "description": "",
-                    "line": 17
+                    "line": 25
                 },
                 {
                     "name": "files3",
@@ -7826,7 +7656,7 @@
                     "type": "TreeNode[]",
                     "optional": false,
                     "description": "",
-                    "line": 19
+                    "line": 27
                 },
                 {
                     "name": "selectedFiles1",
@@ -7836,7 +7666,7 @@
                     "type": "TreeNode[]",
                     "optional": false,
                     "description": "",
-                    "line": 21
+                    "line": 29
                 },
                 {
                     "name": "selectedFiles2",
@@ -7846,7 +7676,7 @@
                     "type": "TreeNode[]",
                     "optional": false,
                     "description": "",
-                    "line": 23
+                    "line": 31
                 },
                 {
                     "name": "selectedFiles3",
@@ -7856,7 +7686,7 @@
                     "type": "TreeNode",
                     "optional": false,
                     "description": "",
-                    "line": 25
+                    "line": 33
                 }
             ],
             "methodsClass": [
@@ -7866,7 +7696,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 34,
+                    "line": 42,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -7880,7 +7710,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { NodeService } from 'src/app/demo/service/node.service';\nimport { TreeNode } from 'primeng/api';\n@Component({\n    selector: 'app-treedemo',\n    templateUrl: './treedemo.component.html'\n})\nexport class TreeDemoComponent implements OnInit {\n    @Input() value: TreeNode[] = [];\n    @Input() selectionMode: string;\n\n    @Output()\n    onClick = new EventEmitter<Event>();\n\n    @Input() files1: TreeNode[] = [];\n\n    files2: TreeNode[] = [];\n\n    files3: TreeNode[] = [];\n\n    selectedFiles1: TreeNode[] = [];\n\n    selectedFiles2: TreeNode[] = [];\n\n    selectedFiles3: TreeNode = {};\n    @Input() collapsedIcon: string;\n    @Input() expandedIcon: string;\n    @Input() fileIcon: string;\n\n    @Input() cols: any[] = [];\n\n    constructor(private nodeService: NodeService) { }\n\n    ngOnInit() {\n\n        this.nodeService.getFiles().then(files => this.value = files);\n        this.nodeService.getFilesystem().then(files => this.files2 = files);\n        this.nodeService.getFiles().then(files => {\n            this.files3 = [{\n                label: 'Root',\n                children: files\n            }];\n        });\n\n        this.cols = [\n            { field: 'name', header: 'Name' },\n            { field: 'size', header: 'Size' },\n            { field: 'type', header: 'Type' }\n        ];\n        console.log(this.value);\n\n    }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { NodeService } from 'src/app/demo/service/node.service';\nimport { TreeNode } from 'primeng/api';\nimport { HttpClient } from '@angular/common/http';\n@Component({\n    selector: 'app-treedemo',\n    template: `\n    <p-tree\n        [value]=\"value\"\n        selectionMode=\"single\"\n        expandedIcon=\"pi pi-folder\"\n        [(selection)]=\"files1\"\n      ></p-tree>\n      `\n})\nexport class TreeDemoComponent implements OnInit {\n    @Input() value: TreeNode[] = [];\n    @Input() selectionMode: string;\n\n    @Output()\n    onClick = new EventEmitter<Event>();\n\n    @Input() files1: TreeNode[] = [];\n\n    files2: TreeNode[] = [];\n\n    files3: TreeNode[] = [];\n\n    selectedFiles1: TreeNode[] = [];\n\n    selectedFiles2: TreeNode[] = [];\n\n    selectedFiles3: TreeNode = {};\n    @Input() collapsedIcon: string;\n    @Input() expandedIcon: string;\n    @Input() fileIcon: string;\n\n    @Input() cols: any[] = [];\n\n    constructor(private nodeService: NodeService, private httpClient: HttpClient) { }\n\n    ngOnInit() {\n\n        this.nodeService.getFiles().then(files => this.value = files);\n        this.nodeService.getFilesystem().then(files => this.files2 = files);\n        this.nodeService.getFiles().then(files => {\n            this.files3 = [{\n                label: 'Root',\n                children: files\n            }];\n        });\n\n        this.cols = [\n            { field: 'name', header: 'Name' },\n            { field: 'size', header: 'Size' },\n            { field: 'type', header: 'Type' }\n        ];\n        console.log(this.value);\n\n    }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -7895,13 +7725,28 @@
                         "type": "NodeService",
                         "deprecated": false,
                         "deprecationMessage": ""
+                    },
+                    {
+                        "name": "httpClient",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
                     }
                 ],
-                "line": 30,
+                "line": 38,
                 "jsdoctags": [
                     {
                         "name": "nodeService",
                         "type": "NodeService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "httpClient",
+                        "type": "HttpClient",
                         "deprecated": false,
                         "deprecationMessage": "",
                         "tagName": {
@@ -7913,8 +7758,7 @@
             "extends": [],
             "implements": [
                 "OnInit"
-            ],
-            "templateData": "<div class=\"grid\">\n  <div class=\"col-12\">\n    <div class=\"card\">\n      <h5>Tree</h5>\n      <p-tree\n        [value]=\"value\"\n        selectionMode=\"single\"\n        expandedIcon=\"pi pi-folder\"\n        [(selection)]=\"selectedFiles1\"\n      ></p-tree>\n    </div>\n  </div>\n  <div class=\"col-12\">\n    <div class=\"card\">\n      <h5>TreeTable</h5>\n      <p-treeTable\n        [value]=\"files2\"\n        [columns]=\"cols\"\n        selectionMode=\"checkbox\"\n        [(selection)]=\"selectedFiles2\"\n      >\n        <ng-template pTemplate=\"header\" let-columns>\n          <tr>\n            <th *ngFor=\"let col of columns\">\n              {{ col.header }}\n            </th>\n          </tr>\n        </ng-template>\n        <ng-template\n          pTemplate=\"body\"\n          let-rowNode\n          let-rowData=\"rowData\"\n          let-columns=\"columns\"\n        >\n          <tr>\n            <td *ngFor=\"let col of columns; let i = index\">\n              <p-treeTableToggler\n                [rowNode]=\"rowNode\"\n                *ngIf=\"i === 0\"\n              ></p-treeTableToggler>\n              <p-treeTableCheckbox\n                [value]=\"rowNode\"\n                *ngIf=\"i === 0\"\n              ></p-treeTableCheckbox>\n              {{ rowData[col.field] }}\n            </td>\n          </tr>\n        </ng-template>\n      </p-treeTable>\n    </div>\n  </div>\n  <div class=\"col-12\">\n    <div class=\"card\">\n      <h5>Horizontal Tree</h5>\n      <p-tree\n        [value]=\"files3\"\n        layout=\"horizontal\"\n        selectionMode=\"single\"\n        [(selection)]=\"selectedFiles3\"\n      ></p-tree>\n    </div>\n  </div>\n</div>\n"
+            ]
         }
     ],
     "modules": [
@@ -8107,13 +7951,13 @@
         },
         {
             "name": "AppModule",
-            "id": "module-AppModule-ada2d91e809db43b500eef876e38aa19eb3b33b8fdca55e08c073200a2b9d444d287769ca0a57c4209c209200febb2522157909667da8b9b57f5592632258a97",
+            "id": "module-AppModule-9a3a7db8382831663f290106314ef1111018ab0fd6d2a1efda20fcb540aaf803ebb2d8c820d3d110e050e8056a5ca96dba9073209a73ee643939aeaf1345da6c",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';\nimport { AppComponent } from './app.component';\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppLayoutModule } from './layout/app.layout.module';\nimport { NotfoundComponent } from './demo/components/notfound/notfound.component';\nimport { ProductService } from './demo/service/product.service';\nimport { CountryService } from './demo/service/country.service';\nimport { CustomerService } from './demo/service/customer.service';\nimport { EventService } from './demo/service/event.service';\nimport { IconService } from './demo/service/icon.service';\nimport { NodeService } from './demo/service/node.service';\nimport { PhotoService } from './demo/service/photo.service';\n\n@NgModule({\n    declarations: [AppComponent, NotfoundComponent],\n    imports: [AppRoutingModule, AppLayoutModule],\n    providers: [\n        { provide: LocationStrategy, useClass: PathLocationStrategy },\n        CountryService, CustomerService, EventService, IconService, NodeService,\n        PhotoService, ProductService\n    ],\n    bootstrap: [AppComponent],\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';\nimport { AppComponent } from './app.component';\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppLayoutModule } from './layout/app.layout.module';\nimport { NotfoundComponent } from './demo/components/notfound/notfound.component';\nimport { ProductService } from './demo/service/product.service';\nimport { CountryService } from './demo/service/country.service';\nimport { CustomerService } from './demo/service/customer.service';\nimport { EventService } from './demo/service/event.service';\nimport { IconService } from './demo/service/icon.service';\nimport { NodeService } from './demo/service/node.service';\nimport { PhotoService } from './demo/service/photo.service';\nimport { provideHttpClient, withFetch } from '@angular/common/http';\n\n@NgModule({\n    declarations: [AppComponent, NotfoundComponent],\n    imports: [AppRoutingModule, AppLayoutModule],\n    providers: [\n        provideHttpClient(\n            withFetch(),\n        ),\n        { provide: LocationStrategy, useClass: PathLocationStrategy, },\n\n        CountryService, CustomerService, EventService, IconService, NodeService,\n        PhotoService, ProductService,\n    ],\n    bootstrap: [AppComponent],\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -10844,7 +10688,7 @@
                 "linktype": "component",
                 "name": "InputDemoComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/22",
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {

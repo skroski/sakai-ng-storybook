@@ -1,9 +1,17 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NodeService } from 'src/app/demo/service/node.service';
 import { TreeNode } from 'primeng/api';
+import { HttpClient } from '@angular/common/http';
 @Component({
     selector: 'app-treedemo',
-    templateUrl: './treedemo.component.html'
+    template: `
+    <p-tree
+        [value]="value"
+        selectionMode="single"
+        expandedIcon="pi pi-folder"
+        [(selection)]="files1"
+      ></p-tree>
+      `
 })
 export class TreeDemoComponent implements OnInit {
     @Input() value: TreeNode[] = [];
@@ -29,7 +37,7 @@ export class TreeDemoComponent implements OnInit {
 
     @Input() cols: any[] = [];
 
-    constructor(private nodeService: NodeService) { }
+    constructor(private nodeService: NodeService, private httpClient: HttpClient) { }
 
     ngOnInit() {
 

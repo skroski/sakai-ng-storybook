@@ -1,10 +1,22 @@
-import { componentWrapperDecorator, type Preview } from "@storybook/angular";
+import { moduleMetadata, type Preview } from "@storybook/angular";
 import { setCompodocJson } from "@storybook/addon-docs/angular";
 import docJson from "../documentation.json";
+import { HttpClientModule } from "@angular/common/http";
 setCompodocJson(docJson);
 
 const preview: Preview = {
-
+  decorators: [
+    moduleMetadata({
+      imports: [HttpClientModule],
+    }),
+    /* withThemeByClassName({
+      themes: {
+        light: 'light',
+        dark: 'dark',
+      },
+      defaultTheme: 'light',
+    }), */
+  ],
   parameters: {
     controls: {
       matchers: {
@@ -29,7 +41,7 @@ const preview: Preview = {
 };
 
 export default preview;
-function withThemeByClassName(arg0: { themes: { light: string; dark: string; }; defaultTheme: string; }): import("@storybook/types").DecoratorFunction<import("@storybook/angular").AngularRenderer, { [x: string]: any; }> {
+/* function withThemeByClassName(arg0: { themes: { light: string; dark: string; }; defaultTheme: string; }): import("@storybook/types").DecoratorFunction<import("@storybook/angular").AngularRenderer, { [x: string]: any; }> {
   throw new Error("Function not implemented.");
-}
+} */
 

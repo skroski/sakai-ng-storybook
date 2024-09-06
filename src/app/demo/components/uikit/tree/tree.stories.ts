@@ -2,8 +2,8 @@ import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
 import { fn } from '@storybook/test';
 import { TreeDemoComponent } from './treedemo.component';
 import { NodeService } from 'src/app/demo/service/node.service';
-import { TreeModule } from 'primeng/tree';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { TreeDemoModule } from './treedemo.module';
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 
 const meta: Meta<TreeDemoComponent> = {
@@ -12,11 +12,9 @@ const meta: Meta<TreeDemoComponent> = {
   render: () => ({
     template: `<app-treedemo [value]="value" selectionMode="single"></app-treedemo>`,
   }),
-
   decorators: [
     moduleMetadata({
-      declarations: [TreeDemoComponent],
-      imports: [TreeModule, HttpClientModule, HttpClient],
+      imports: [TreeDemoModule, HttpClientModule],
       providers: [
         NodeService
       ],

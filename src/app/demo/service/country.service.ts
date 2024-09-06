@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 
 @Injectable()
 export class CountryService {
-
-    constructor(private http: HttpClient) { }
+    private http = inject(HttpClient);
+    //private countries: string[] = [];
 
     getCountries() {
-        return this.http.get<any>('assets/demo/data/countries.json')
+        return this.http.get<any>('http://localhost:4200/assets/demo/data/countries.json')
             .toPromise()
             .then(res => res.data as any[])
             .then(data => data);
