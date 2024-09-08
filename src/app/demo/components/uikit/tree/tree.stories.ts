@@ -2,19 +2,14 @@ import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
 import { fn } from '@storybook/test';
 import { TreeDemoComponent } from './treedemo.component';
 import { NodeService } from 'src/app/demo/service/node.service';
-import { HttpClientModule } from '@angular/common/http';
-import { TreeDemoModule } from './treedemo.module';
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 
 const meta: Meta<TreeDemoComponent> = {
   title: 'Components/TreeDemo',
   component: TreeDemoComponent,
-  render: () => ({
-    template: `<app-treedemo [value]="value" selectionMode="single"></app-treedemo>`,
-  }),
+
   decorators: [
     moduleMetadata({
-      imports: [TreeDemoModule, HttpClientModule],
       providers: [
         NodeService
       ],
@@ -40,36 +35,7 @@ type Story = StoryObj<TreeDemoComponent>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    value: [{
-      "key": "0",
-      "label": "Documents",
-      "data": "Documents Folder",
-      "icon": "pi pi-fw pi-inbox",
-      "children": [{
-        "key": "0-0",
-        "label": "Work",
-        "data": "Work Folder",
-        "icon": "pi pi-fw pi-cog",
-        "children": [{ "key": "0-0-0", "label": "Expenses.doc", "icon": "pi pi-fw pi-file", "data": "Expenses Document" }, { "key": "0-0-1", "label": "Resume.doc", "icon": "pi pi-fw pi-file", "data": "Resume Document" }]
-      },
-      {
-        "key": "0-1",
-        "label": "Home",
-        "data": "Home Folder",
-        "icon": "pi pi-fw pi-home",
-        "children": [{ "key": "0-1-0", "label": "Invoices.txt", "icon": "pi pi-fw pi-file", "data": "Invoices for this month" }]
-      }]
-    },
-    {
-      "key": "1",
-      "label": "Events",
-      "data": "Events Folder",
-      "icon": "pi pi-fw pi-calendar",
-      "children": [
-        { "key": "1-0", "label": "Meeting", "icon": "pi pi-fw pi-calendar-plus", "data": "Meeting" },
-        { "key": "1-1", "label": "Product Launch", "icon": "pi pi-fw pi-calendar-plus", "data": "Product Launch" },
-        { "key": "1-2", "label": "Report Review", "icon": "pi pi-fw pi-calendar-plus", "data": "Report Review" }]
-    }],
+    value: [],
     expandedIcon: 'pi pi-folder',
     collapsedIcon: 'pi pi-folder-open',
     cols: [

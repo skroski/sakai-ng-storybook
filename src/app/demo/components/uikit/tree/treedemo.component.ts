@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NodeService } from 'src/app/demo/service/node.service';
 import { TreeNode } from 'primeng/api';
-import { HttpClient } from '@angular/common/http';
 @Component({
     selector: 'app-treedemo',
     template: `
@@ -37,13 +36,13 @@ export class TreeDemoComponent implements OnInit {
 
     @Input() cols: any[] = [];
 
-    constructor(private nodeService: NodeService, private httpClient: HttpClient) { }
+    constructor(private nodeService: NodeService) { }
 
     ngOnInit() {
 
-        this.nodeService.getFiles().then(files => this.value = files);
+        this.nodeService.getFiles().subscribe(files => this.value = files);
         this.nodeService.getFilesystem().then(files => this.files2 = files);
-        this.nodeService.getFiles().then(files => {
+        this.nodeService.getFiles().subscribe(files => {
             this.files3 = [{
                 label: 'Root',
                 children: files

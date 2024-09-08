@@ -1177,7 +1177,7 @@
         },
         {
             "name": "NodeService",
-            "id": "injectable-NodeService-2066d380791873107c99063485aa29ff035da351e0741ad3b7dd6fa5ccbeb9ce502d11e811e9fb2d3d65ad2251fcd26b84712734f8704a3954b9b85e708fae78",
+            "id": "injectable-NodeService-70982f5f0cdce8162c13151f3fe3b3f776ca6a22e628172bbf55d526f3c470614c59a6ebbcaf9d6fc1dc0819df57df510f947764992f646fdf208a25beb2041f",
             "file": "src/app/demo/service/node.service.ts",
             "properties": [],
             "methods": [
@@ -1197,7 +1197,7 @@
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 22,
+                    "line": 20,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1207,7 +1207,7 @@
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 16,
+                    "line": 14,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1217,7 +1217,7 @@
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 28,
+                    "line": 26,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1226,7 +1226,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\nimport { TreeNode } from 'primeng/api';\n\n@Injectable()\nexport class NodeService {\n\n    constructor(private http: HttpClient) { }\n\n    getFiles() {\n        return this.http.get<any>('assets/demo/data/files.json')\n            .toPromise()\n            .then(res => res.data as TreeNode[]);\n    }\n\n    getLazyFiles() {\n        return this.http.get<any>('assets/demo/data/files-lazy.json')\n            .toPromise()\n            .then(res => res.data as TreeNode[]);\n    }\n\n    getFilesystem() {\n        return this.http.get<any>('assets/demo/data/filesystem.json')\n            .toPromise()\n            .then(res => res.data as TreeNode[]);\n    }\n\n    getLazyFilesystem() {\n        return this.http.get<any>('assets/demo/data/filesystem-lazy.json')\n            .toPromise()\n            .then(res => res.data as TreeNode[]);\n    }\n}\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\nimport { TreeNode } from 'primeng/api';\n\n@Injectable()\nexport class NodeService {\n\n    constructor(private http: HttpClient) { }\n\n    getFiles() {\n        return this.http.get<TreeNode[]>('http://localhost:4200/assets/demo/data/files.json')\n    }\n\n    getLazyFiles() {\n        return this.http.get<any>('http://localhost:4200/assets/demo/data/files-lazy.json')\n            .toPromise()\n            .then(res => res.data as TreeNode[]);\n    }\n\n    getFilesystem() {\n        return this.http.get<any>('http://localhost:4200/assets/demo/data/filesystem.json')\n            .toPromise()\n            .then(res => res.data as TreeNode[]);\n    }\n\n    getLazyFilesystem() {\n        return this.http.get<any>('http://localhost:4200/assets/demo/data/filesystem-lazy.json')\n            .toPromise()\n            .then(res => res.data as TreeNode[]);\n    }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -5185,7 +5185,7 @@
         },
         {
             "name": "InputDemoComponent",
-            "id": "component-InputDemoComponent-d98dab6c230459ce9bab47f40d11d27b305830714e52e6c7aca02db615cf5996cc0222bf5df52fb49aee6e2f952dce759f3a7f34b8a2cf400bce3540873c7b0d",
+            "id": "component-InputDemoComponent-1a9f2768c64f65f86f703ef72dd7eec7eeb63c1b9defca4b2f52791283ea57a94845608d1a83108d5c9645ece2aca85438f191cc740e13030f4a707b1d756e1d",
             "file": "src/app/demo/components/uikit/input/inputdemo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -5195,7 +5195,7 @@
             "selector": "app-inputdemo",
             "styleUrls": [],
             "styles": [],
-            "template": "<input        type=\"text\"\n       [placeholder]=\"placeholder\"\n       [ngStyle]=\"{\n        'background-color': backgroundColor,\n        'border': border,\n        'padding': padding,\n        'color': color,\n        'border-radius': borderRadius,\n        'width': '40%',\n        'height': '40px',\n        }\"\n      />\n",
+            "template": "<input        pInputText\n       [placeholder]=\"placeholder\"\n       [ngClass]=\"classes\"\n       [ngStyle]=\"{\n        'background-color': backgroundColor,\n        'border': border,\n        'padding': padding,\n        'color': color,\n        'border-radius': borderRadius,\n        'placeholder': color,\n        'width': '40%',\n        'height': '40px',\n        }\"\n      />\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -5204,36 +5204,12 @@
                     "name": "backgroundColor",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 30,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "border",
-                    "deprecated": false,
-                    "deprecationMessage": "",
                     "line": 32,
                     "type": "string",
                     "decorators": []
                 },
                 {
-                    "name": "borderRadius",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 38,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "color",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 36,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "padding",
+                    "name": "border",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 34,
@@ -5244,7 +5220,7 @@
                     "name": "placeholder",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 27,
+                    "line": 29,
                     "type": "string",
                     "decorators": []
                 },
@@ -5253,7 +5229,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
+                    "line": 26,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -5262,13 +5238,49 @@
                     "defaultValue": "\"medium\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 41,
+                    "line": 43,
                     "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "string",
                     "decorators": []
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "borderRadius",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 39
+                },
+                {
+                    "name": "color",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 38
+                },
+                {
+                    "name": "padding",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 37
+                }
+            ],
             "methodsClass": [
                 {
                     "name": "ngOnInit",
@@ -5276,7 +5288,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 52,
+                    "line": 54,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -5290,7 +5302,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from \"@angular/core\";\n\n@Component({\n    selector: 'app-inputdemo',\n    template: `<input\n        type=\"text\"\n       [placeholder]=\"placeholder\"\n       [ngStyle]=\"{ \n        'background-color': backgroundColor, \n        'border': border,\n        'padding': padding, \n        'color': color,  \n        'border-radius': borderRadius,\n        'width': '40%',\n        'height': '40px',\n        }\"\n      />\n  `,\n    styleUrl: './inputdemo.component.scss',\n})\nexport class InputDemoComponent implements OnInit {\n\n    @Input()\n    primary = false;\n\n    @Input()\n    placeholder?: string\n\n    @Input()\n    backgroundColor?: string;\n    @Input()\n    border?: string;\n    @Input()\n    padding?: string;\n    @Input()\n    color?: string;\n    @Input()\n    borderRadius?: string;\n\n    @Input()\n    size: \"small\" | \"medium\" | \"large\" = \"medium\";\n\n    public get classes(): string[] {\n        const mode = this.primary\n            ? \"p-input-primary\"\n            : \"p-input-secondary\";\n\n        return [\"p-element p-ripple p-component p-input \", `p-input-${this.size}`, mode];\n    }\n\n\n    ngOnInit() {\n        console.log();\n    }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from \"@angular/core\";\n\n@Component({\n    selector: 'app-inputdemo',\n    template: `<input\n        pInputText\n       [placeholder]=\"placeholder\"\n       [ngClass]=\"classes\"\n       [ngStyle]=\"{ \n        'background-color': backgroundColor, \n        'border': border,\n        'padding': padding, \n        'color': color,  \n        'border-radius': borderRadius,\n        'placeholder': color,\n        'width': '40%',\n        'height': '40px',\n        }\"\n      />\n  `,\n    styleUrl: './inputdemo.component.scss',\n})\nexport class InputDemoComponent implements OnInit {\n\n    @Input()\n    primary = false;\n\n    @Input()\n    placeholder?: string;\n\n    @Input()\n    backgroundColor?: string;\n    @Input()\n    border?: string;\n    @Input()\n    type?: string;\n    padding?: string;\n    color?: string;\n    borderRadius?: string;\n\n\n    @Input()\n    size: \"small\" | \"medium\" | \"large\" = \"medium\";\n\n    public get classes(): string[] {\n        const mode = this.primary\n            ? \"p-input-primary\"\n            : \"p-input-secondary\";\n\n        return [\"p-element p-ripple p-component p-input \", `p-input-${this.size}`, mode];\n    }\n\n\n    ngOnInit() {\n        console.log();\n    }\n\n}\n",
             "styleUrl": "./inputdemo.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -5306,7 +5318,7 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 43
+                        "line": 45
                     }
                 }
             }
@@ -7552,7 +7564,7 @@
         },
         {
             "name": "TreeDemoComponent",
-            "id": "component-TreeDemoComponent-7ce6e0289d736d5aeb168674365bdd1552d0653291ba1839fdc57a836b865b78aedb316c6612a611545612e6e816877ccf026215961d34651ad2a816f27802b4",
+            "id": "component-TreeDemoComponent-637d34993e2e673228a1ef698005374eaccb713d0d316a536c6d169503a42c8b7d8c16d9b4f9495b8aa7bcf01427003119d55537178783fc0dde4d7a218af9e3",
             "file": "src/app/demo/components/uikit/tree/treedemo.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -7571,7 +7583,7 @@
                     "name": "collapsedIcon",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 34,
+                    "line": 33,
                     "type": "string",
                     "decorators": []
                 },
@@ -7580,7 +7592,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 38,
+                    "line": 37,
                     "type": "any[]",
                     "decorators": []
                 },
@@ -7588,7 +7600,7 @@
                     "name": "expandedIcon",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 35,
+                    "line": 34,
                     "type": "string",
                     "decorators": []
                 },
@@ -7596,7 +7608,7 @@
                     "name": "fileIcon",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 36,
+                    "line": 35,
                     "type": "string",
                     "decorators": []
                 },
@@ -7605,7 +7617,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 22,
                     "type": "TreeNode[]",
                     "decorators": []
                 },
@@ -7613,7 +7625,7 @@
                     "name": "selectionMode",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 17,
                     "type": "string",
                     "decorators": []
                 },
@@ -7622,7 +7634,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 16,
                     "type": "TreeNode[]",
                     "decorators": []
                 }
@@ -7633,7 +7645,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 20,
                     "type": "EventEmitter"
                 }
             ],
@@ -7646,7 +7658,7 @@
                     "type": "TreeNode[]",
                     "optional": false,
                     "description": "",
-                    "line": 25
+                    "line": 24
                 },
                 {
                     "name": "files3",
@@ -7656,7 +7668,7 @@
                     "type": "TreeNode[]",
                     "optional": false,
                     "description": "",
-                    "line": 27
+                    "line": 26
                 },
                 {
                     "name": "selectedFiles1",
@@ -7666,7 +7678,7 @@
                     "type": "TreeNode[]",
                     "optional": false,
                     "description": "",
-                    "line": 29
+                    "line": 28
                 },
                 {
                     "name": "selectedFiles2",
@@ -7676,7 +7688,7 @@
                     "type": "TreeNode[]",
                     "optional": false,
                     "description": "",
-                    "line": 31
+                    "line": 30
                 },
                 {
                     "name": "selectedFiles3",
@@ -7686,7 +7698,7 @@
                     "type": "TreeNode",
                     "optional": false,
                     "description": "",
-                    "line": 33
+                    "line": 32
                 }
             ],
             "methodsClass": [
@@ -7696,7 +7708,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 42,
+                    "line": 41,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -7710,7 +7722,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { NodeService } from 'src/app/demo/service/node.service';\nimport { TreeNode } from 'primeng/api';\nimport { HttpClient } from '@angular/common/http';\n@Component({\n    selector: 'app-treedemo',\n    template: `\n    <p-tree\n        [value]=\"value\"\n        selectionMode=\"single\"\n        expandedIcon=\"pi pi-folder\"\n        [(selection)]=\"files1\"\n      ></p-tree>\n      `\n})\nexport class TreeDemoComponent implements OnInit {\n    @Input() value: TreeNode[] = [];\n    @Input() selectionMode: string;\n\n    @Output()\n    onClick = new EventEmitter<Event>();\n\n    @Input() files1: TreeNode[] = [];\n\n    files2: TreeNode[] = [];\n\n    files3: TreeNode[] = [];\n\n    selectedFiles1: TreeNode[] = [];\n\n    selectedFiles2: TreeNode[] = [];\n\n    selectedFiles3: TreeNode = {};\n    @Input() collapsedIcon: string;\n    @Input() expandedIcon: string;\n    @Input() fileIcon: string;\n\n    @Input() cols: any[] = [];\n\n    constructor(private nodeService: NodeService, private httpClient: HttpClient) { }\n\n    ngOnInit() {\n\n        this.nodeService.getFiles().then(files => this.value = files);\n        this.nodeService.getFilesystem().then(files => this.files2 = files);\n        this.nodeService.getFiles().then(files => {\n            this.files3 = [{\n                label: 'Root',\n                children: files\n            }];\n        });\n\n        this.cols = [\n            { field: 'name', header: 'Name' },\n            { field: 'size', header: 'Size' },\n            { field: 'type', header: 'Type' }\n        ];\n        console.log(this.value);\n\n    }\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { NodeService } from 'src/app/demo/service/node.service';\nimport { TreeNode } from 'primeng/api';\n@Component({\n    selector: 'app-treedemo',\n    template: `\n    <p-tree\n        [value]=\"value\"\n        selectionMode=\"single\"\n        expandedIcon=\"pi pi-folder\"\n        [(selection)]=\"files1\"\n      ></p-tree>\n      `\n})\nexport class TreeDemoComponent implements OnInit {\n    @Input() value: TreeNode[] = [];\n    @Input() selectionMode: string;\n\n    @Output()\n    onClick = new EventEmitter<Event>();\n\n    @Input() files1: TreeNode[] = [];\n\n    files2: TreeNode[] = [];\n\n    files3: TreeNode[] = [];\n\n    selectedFiles1: TreeNode[] = [];\n\n    selectedFiles2: TreeNode[] = [];\n\n    selectedFiles3: TreeNode = {};\n    @Input() collapsedIcon: string;\n    @Input() expandedIcon: string;\n    @Input() fileIcon: string;\n\n    @Input() cols: any[] = [];\n\n    constructor(private nodeService: NodeService) { }\n\n    ngOnInit() {\n\n        this.nodeService.getFiles().subscribe(files => this.value = files);\n        this.nodeService.getFilesystem().then(files => this.files2 = files);\n        this.nodeService.getFiles().subscribe(files => {\n            this.files3 = [{\n                label: 'Root',\n                children: files\n            }];\n        });\n\n        this.cols = [\n            { field: 'name', header: 'Name' },\n            { field: 'size', header: 'Size' },\n            { field: 'type', header: 'Type' }\n        ];\n        console.log(this.value);\n\n    }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -7725,28 +7737,13 @@
                         "type": "NodeService",
                         "deprecated": false,
                         "deprecationMessage": ""
-                    },
-                    {
-                        "name": "httpClient",
-                        "type": "HttpClient",
-                        "deprecated": false,
-                        "deprecationMessage": ""
                     }
                 ],
-                "line": 38,
+                "line": 37,
                 "jsdoctags": [
                     {
                         "name": "nodeService",
                         "type": "NodeService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "httpClient",
-                        "type": "HttpClient",
                         "deprecated": false,
                         "deprecationMessage": "",
                         "tagName": {
@@ -10688,7 +10685,7 @@
                 "linktype": "component",
                 "name": "InputDemoComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/10",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {

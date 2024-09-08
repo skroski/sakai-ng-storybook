@@ -40,7 +40,7 @@ export const Primary: Story = {
   },
 
 };
-/** Secondary Button  */
+/** Input Secondary   */
 export const Secondary: Story = {
   args: {
     ...Primary.args,
@@ -51,6 +51,7 @@ export const Secondary: Story = {
   },
 
 };
+/** Input Desabilitado  */
 export const Disable: Story = {
   args: {
     ...Primary.args,
@@ -60,6 +61,7 @@ export const Disable: Story = {
 
   },
 };
+/** Input de Sucesso */
 export const Success: Story = {
   args: {
     ...Primary.args,
@@ -69,6 +71,7 @@ export const Success: Story = {
 
   },
 };
+/** Input de Atenção (Warning) */
 export const Warning: Story = {
   args: {
     ...Primary.args,
@@ -78,7 +81,7 @@ export const Warning: Story = {
 
   },
 };
-
+/** Input de Perigo (Danger)  */
 export const Danger: Story = {
   args: {
     ...Primary.args,
@@ -87,6 +90,13 @@ export const Danger: Story = {
     border: "2px solid #821720",
 
   },
+  argTypes: {
+    backgroundColor: { control: 'inline-radio', options: ['success', 'warning', 'danger'] },
+    color: { control: 'color', },
+    border: { control: 'color', },
+    borderRadius: { control: 'number' },
+    padding: { control: 'number' },
+  }
 };
 
 export const Large: Story = {

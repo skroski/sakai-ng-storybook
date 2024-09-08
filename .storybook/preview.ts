@@ -3,6 +3,7 @@ import { setCompodocJson } from "@storybook/addon-docs/angular";
 import docJson from "../documentation.json";
 import { HttpClientModule } from "@angular/common/http";
 setCompodocJson(docJson);
+import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport"
 
 const preview: Preview = {
   decorators: [
@@ -36,6 +37,9 @@ const preview: Preview = {
           { name: "white", value: "#fff" },
 
         ],
+    },
+    viewport: {
+      viewports: INITIAL_VIEWPORTS
     }
   }
 };
